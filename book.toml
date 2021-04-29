@@ -1,0 +1,5 @@
+[book]
+authors = ["Vinícius Carra"]
+language = "pt"
+multilingual = false
+src = "src"
