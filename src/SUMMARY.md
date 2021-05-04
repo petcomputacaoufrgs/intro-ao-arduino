@@ -7,6 +7,8 @@
     - [Anatomia do Arduino UNO](./introducao/anatomia-do-arduino-uno.md)
     - [IDE](./introducao/ide.md)
         - [Baixando e instalando a IDE](./introducao/instalacao-ide.md)
+        - [Arduino Editor - IDE online](./introducao/arduino-editor.md)
+    - [Plataforma Tinkercad](./introducao/tinkercad.md)
 - [Funções Básicas](./funcoes-basicas/funcoes-basicas.md)
     - [setup() e loop()](./funcoes-basicas/setup-loop.md)
     - [Funções de Entrada e Saída](./funcoes-basicas/entrada-saida.md)
