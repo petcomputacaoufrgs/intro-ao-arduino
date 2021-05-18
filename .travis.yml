@@ -14,4 +14,4 @@ deploy:
   local_dir: book
   skip_cleanup: true
   on:
-    branch: master
+    branch: main
