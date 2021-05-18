@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="pt" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introducao/introducao.html"><strong aria-hidden="true">1.</strong> Introdução</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introducao/o-que-e-arduino.html"><strong aria-hidden="true">1.1.</strong> O que é o Arduino?</a></li><li class="chapter-item expanded "><a href="introducao/por-que-arduino.html"><strong aria-hidden="true">1.2.</strong> Por que Arduino?</a></li><li class="chapter-item expanded "><a href="introducao/tipos-de-placas.html"><strong aria-hidden="true">1.3.</strong> Tipos de placas</a></li><li class="chapter-item expanded "><a href="introducao/anatomia-do-arduino-uno.html"><strong aria-hidden="true">1.4.</strong> Anatomia do Arduino UNO</a></li><li class="chapter-item expanded "><a href="introducao/ide.html"><strong aria-hidden="true">1.5.</strong> IDE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introducao/instalacao-ide.html"><strong aria-hidden="true">1.5.1.</strong> Baixando e instalando a IDE</a></li><li class="chapter-item expanded "><a href="introducao/arduino-editor.html"><strong aria-hidden="true">1.5.2.</strong> Arduino Editor - IDE online</a></li></ol></li><li class="chapter-item expanded "><a href="introducao/tinkercad.html"><strong aria-hidden="true">1.6.</strong> Plataforma Tinkercad</a></li></ol></li><li class="chapter-item expanded "><a href="funcoes-basicas/hardware-basicos.html"><strong aria-hidden="true">2.</strong> Hardware básicos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introducao/protoboard.html"><strong aria-hidden="true">2.1.</strong> Protoboard</a></li><li class="chapter-item expanded "><a href="introducao/led.html"><strong aria-hidden="true">2.2.</strong> LEDs e Resistores</a></li><li class="chapter-item expanded "><a href="introducao/protoboard.html"><strong aria-hidden="true">2.3.</strong> Botão tátil</a></li></ol></li><li class="chapter-item expanded "><a href="funcoes-basicas/funcoes-basicas.html"><strong aria-hidden="true">3.</strong> Funções Básicas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="funcoes-basicas/setup-loop.html"><strong aria-hidden="true">3.1.</strong> setup() e loop()</a></li><li class="chapter-item expanded "><a href="funcoes-basicas/entrada-saida.html"><strong aria-hidden="true">3.2.</strong> Funções de Entrada e Saída</a></li><li class="chapter-item expanded "><a href="funcoes-basicas/tempo.html"><strong aria-hidden="true">3.3.</strong> Funções de Tempo</a></li></ol></li><li class="chapter-item expanded "><a href="projetos/contador-binario.html"><strong aria-hidden="true">4.</strong> Primeiro projeto - Contador binário</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introdução-ao-curso" id="introdução-ao-curso">Introdução ao curso</a></h1>
+<h1><a class="header" href="#o-que-é-arduino" id="o-que-é-arduino">O que é Arduino?</a></h1>
+<p>Arduino é uma plataforma eletrônica de código aberto baseada em hardware e softwares flexíveis e fáceis de se utilizar, tornando um meio perfeito para realizar prototipagens. A plataforma foi criada visando a facilitação no ensino de eletrônica para estudantes, por isso, possui um baixo custo e uma suave curva de aprendizagem.</p>
+<p>As placas Arduinos são capazes de ler entradas - que pode ser desde um simples botão até os mais diversos sensores, como de luz, distância e temperatura - e processando essas entrada, pode-se produzir uma saída - ativar um motor, acender um LED, operar um display ou até mesmo tomar ações na internet, como publicar um Tweet.</p>
+<p>É possível utilizar a placa de forma independente ou conectada em um computador, por meio de uma porta USB, em que é possível programar e interagir com ela em tempo real. Assim, é possível notar que o Arduino tem potencial para estar presente nos mais diversos tipos de projetos e ser utilizado tanto por amadores quanto por profissionais.</p>
+<h1><a class="header" href="#por-que-arduino" id="por-que-arduino">Por que Arduino?</a></h1>
+<p>A plataforma Arduino apresenta várias vantagens, algumas delas são:</p>
+<ul>
+<li>
+<p><strong>Preço -</strong> Placas Arduinos são relativamente baratas, se comparadas a outras plataformas de microcontroladores. (Inserir um preço médio de kits encontrados na internet?)</p>
+</li>
+<li>
+<p><strong>Multi-plataforma  -</strong> Não importa se estiver em uma plataforma GNU/Linux, Windows ou MacOS, você terá acesso a IDE do Arduino. Ela está disponível até mesmo para navegador! Isso é uma vantagem sobre a maioria de outros microcontroladores, em que suas plataformas de desenvolvimento são disponibilizadas apenas para Windows.</p>
+</li>
+<li>
+<p><strong>Ambiente de programação simples -</strong> Com uma interface simples e limpa, onde tudo que você precisa está ao alcance de poucos cliques, acaba sendo simples para iniciantes mas  também flexível para experientes. Além disso, é possível utilizar linguagens de programação mais complexas como o C++ ou também uma linguagem simples como o Wiring.</p>
+</li>
+<li>
+<p><strong>Extensibilidade -</strong> Por ser código aberto, existe uma comunidade que está sempre contribuindo uma gama enorme de extensões e bibliotecas para aumentar a compatibilidade do Arduino com outras plataformas, tanto em software como em hardware.</p>
+</li>
+</ul>
+<h1><a class="header" href="#tipos-de-placas" id="tipos-de-placas">Tipos de placas</a></h1>
+<p>Existe uma vasta gama de modelos das placas Arduino, cada uma tem suas particularidades e atendem a necessidades específicas.</p>
+<h4><a class="header" href="#arduino-uno" id="arduino-uno">Arduino Uno</a></h4>
+<p>O modelo mais popular de todos, também é a placa que usaremos como referência ao longo do curso. É fortemente recomendada para iniciantes pois seu preço é acessível, possui uma fácil comunicação com um computador, via USB (que também alimenta a placa, sendo uma alternativa de uma fonte externa). Com 14 pinos digitais e 6 analógicos e uma vasta possibilidades de extensão através de módulos “shields” tornam esta placa flexível e a melhor alternativa para se começar no mundo do Arduino.</p>
+<h4><a class="header" href="#arduino-pro-mini" id="arduino-pro-mini">Arduino Pro Mini</a></h4>
+<p>Destinados para usuários com uma maior experiência. Possui um baixo custo, e como o nome sugere, um pequeno tamanho. Não possui USB, plug para alimentação de energia nem mesmo os cabeçalhos de pino (é necessário soldar os fios diretamente). Este modelo é uma boa escolha para quem quer deixar a placa embutida em um projeto.</p>
+<h4><a class="header" href="#arduino-nano" id="arduino-nano">Arduino Nano</a></h4>
+<p>Uma placa com um tamanho reduzido, mas sem deixar de lado certas comodidades. Diferente do modelo Pro Mini apresentado anteriormente, aqui há cabeçalhos de pinos e uma porta USB.</p>
+<h4><a class="header" href="#arduino-mega" id="arduino-mega">Arduino Mega</a></h4>
+<p>Devido ao grande números de pinos de entrada e saída (54 digitais e 16 analógicos) e maior capacidade de memória, o modelo Megga é ideal para projetos de maior porte. Também é muito indicado para quem é iniciante, pois ele se comporta de forma semelhante ao modelo Uno, porém possui um custo mais elevado.</p>
+<h4><a class="header" href="#arduino-due" id="arduino-due">Arduino Due</a></h4>
+<p>Esta placa possui o mesmo número de pinos do modelo Mega, porém nela há um processador ARM de 32 bits, isso significa uma maior capacidade de processamento comparado aos outros modelos Arduino. Além disso, ela possui duas portas USB. Além da porta para comunicação com outro computador, há uma porta  que permite conexão com periféricos, aumentando ainda mais a sua aplicabilidade.</p>
+<h1><a class="header" href="#anatomia-do-arduino-uno" id="anatomia-do-arduino-uno">Anatomia do Arduino UNO</a></h1>
+<p>Nesta seção, será apresentado algumas partes básicas do arduino que serão referenciadas ao longo do curso. Caso não entenda algum termo aqui, não se preocupe, tudo será explicado detalhadamente nos próximos capítulos. </p>
+<p><img src="introducao/./images/anatomia-placa.png" alt="Anatomia da placa" /></p>
+<ul>
+<li>
+<p><strong>Botão de Reset:</strong> este botão é muito útil para testar e debugar a placa. Quando pressionado, o código presente na placa será executado desde o ínicio. Especialmente útil para quando estamos tentando descobrir a origem de algum comportamento anormal no projeto. </p>
+</li>
+<li>
+<p><strong>Power LED:</strong> Estará aceso enquanto a placa estiver em funcionamento.</p>
+</li>
+<li>
+<p><strong>Portas Digitais:</strong> O Arduino Uno possui 14 portas de entrada e saída digitais, sendo que 6 delas pode-se usar com a função PWM (pinos com um ‘~’ antes de sua numeração). Também há os pinos 0 e 1, que podem ser utilizados para comunicação serial com outros microcontroladores. Além disso, os pinos 2 e 3 podem ser configurados para gerar uma interrupção externa.</p>
+</li>
+<li>
+<p><strong>LED (pino 13):</strong> Existe um LED conectado ao pino digital de número 13. Ou seja, se o pino 13 estiver recebendo/emitindo um sinal positivo, o LED acenderá.</p>
+</li>
+<li>
+<p><strong>Portas Analógicas:</strong> O Arduino possui 6 portas analógicas com resolução de 10 bits. Estas portas são perfeitas para lidar com sensores.</p>
+</li>
+<li>
+<p><strong>Entrada USB:</strong> Utilizada tanto para alimentação da placa quanto para a comunicação com um computador (Utilizaremos ela para usar a IDE e fazer upload do nosso código para a placa).</p>
+</li>
+<li>
+<p><strong>Alimentação DC:</strong> Pode-se utilizar como alternativa ao USB, um conector Jack com a tensão entre 7V e 12V.</p>
+</li>
+</ul>
+<h1><a class="header" href="#ide" id="ide">IDE</a></h1>
+<p>O termo IDE vem de “Integrated Development Environment”, que em tradução livre significa “Ambiente de desenvolvimento Integrado”, é um software que reúne diversas ferramentas e automações para facilitar o desenvolvimento de softwares.</p>
+<p>A IDE do Arduino é de fácil uso e instalação, disponível para plataformas Windows, Linux e macOS. É possível encontrar o download em <a href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a>. Também pode-se baixar em diversas lojas de aplicativos, como a Microsoft Store, para a plataforma Windows. A seção <a href="introducao/instalacao-ide.html">Baixando e instalando a IDE</a> descreve um passo a passo de como fazer o download e a instalção na plataforma Windows.</p>
+<h2><a class="header" href="#interface-básica" id="interface-básica">Interface básica</a></h2>
+<p>A interface da IDE é bem simples, com um menu de opções no topo, seguido por um cabeçalho que contém funções frequentemente usadas, como salvar, compilar, upload, entre outras que estão demonstradas na imagem abaixo.
+Também há a área para a edição do código e logo abaixo, um terminal que dará informações de upload, compilação e possíveis erros caso haja falhas no processo. </p>
+<p><img src="introducao/./images/interface-1.png" alt="Interface básica" /></p>
+<h2><a class="header" href="#alterando-o-idioma-da-ide" id="alterando-o-idioma-da-ide">Alterando o idioma da IDE</a></h2>
+<p>Caso deseje modificar o idioma do IDE, basta acessar o menu <code>File &gt; Preferences</code> (ou digitar o atalho <code>CTRL</code> + <code>,</code> ) e na caixa <code>Editor Language</code> selecionar o idioma desejado. É necessário abrir novamente a IDE para as mudanças serem aplicadas.</p>
+<p><img src="introducao/./images/idioma-1.png" alt="Instalação do software" />
+<img src="introducao/./images/idioma-2.png" alt="Instalação do software" /></p>
+<h1><a class="header" href="#baixando-e-anstalando-a-ide" id="baixando-e-anstalando-a-ide">Baixando e anstalando a IDE</a></h1>
+<p>O passo a passo a seguir foi feito em agosto de 2021, talvez haja modificações desde sua criação até a data em que você está lendo isso. Caso acredite ser pertinente uma mudança neste texto, informe através do email <a href="introducao/pet@inf.ufrgs.br">pet@inf.ufrgs.br</a>.</p>
+<p>Acesse a página <a href="https://www.arduino.cc/en/software">Arduino Software (IDE)</a>. Aqui é possível encontrar o download para as diversas plataformas que tem suporte à IDE. Escolha a que você está utilizando.
+<img src="introducao/./images/download-1.png" alt="Página de Download do software Arduino" /></p>
+<p>Como o projeto é open source, sua manutenção e desenvolvimento de novas funcionalidades depende de doações, caso seja de seu interesse contribuir financeiramente com o projeto, nem que seja com um pouco, pode fazer isso nesta tela. Caso não tenha condições ou não deseje contribuir, basta clicar no botão “JUST DOWNLOAD”.
+<img src="introducao/./images/download-2.png" alt="Página de doação" /></p>
+<h2><a class="header" href="#instalação---windows" id="instalação---windows">Instalação - Windows</a></h2>
+<p>Execute o arquivo <em>.exe</em> baixado com permissões de Administrador. 
+Leia e concorde com os termos de licenciamento.</p>
+<p><img src="introducao/./images/installation-1.png" alt="Instalação do software" /></p>
+<p>Caso deseje uma instalação padrão (recomendado), apenas clique em “Next”.</p>
+<p><img src="introducao/./images/installation-2.png" alt="Instalação do software" /></p>
+<p>Selecione a pasta de destino da instalação. Pode-se deixar como o padrão. Clique em “Install”.</p>
+<p><img src="introducao/./images/installation-3.png" alt="Instalação do software" /></p>
+<p>Começará então o processo de instalação da IDE Arduino, o processo pode levar alguns minutos. Após, basta clicar em “close” e a instalação estará completa.</p>
+<p><img src="introducao/./images/installation-4.png" alt="Instalação do software" /></p>
+<h1><a class="header" href="#arduino-editor---ide-online" id="arduino-editor---ide-online">Arduino Editor - IDE online</a></h1>
+<p>Além da IDE instalada no computador, é possível editar código Arduino e enviar para a placa através de um navegador, utilizando o <a href="https://create.arduino.cc/editor">Arduino Editor</a>. Ao acessar  o link, é apresentada uma página de login. É possível criar uma conta no site, ou se preferir, também pode-se fazer login com sua conta Google ou Apple.</p>
+<p>Ao acessar o Editor pela primeira vez, o próprio site irá fazer um guia das principais features. Será necessário instalar um <em>Agent</em> para que o site possa fazer uso da porta USB em que a placa Arduino está conectada, <a href="https://create.arduino.cc/getting-started/plugin/welcome">instruções de como instalar o Agent</a>. Após instalado, basta selecionar a porta e a placa no painel que se encontra acima do editor de texto</p>
+<p><img src="introducao/./images/create-1.png" alt="Selecionando a porta" />
+<img src="introducao/./images/create-2.png" alt="Selecionando o modelo da placa Arduíno" /></p>
+<h1><a class="header" href="#plataforma-tinkercad" id="plataforma-tinkercad">Plataforma Tinkercad</a></h1>
+<p>O Tinkercad é uma plataforma online e gratuita que apresenta recursos para o aprendizado, proporcionando a possibilidade de criação e simulação de modelos 3D e circuitos, incluindo o Arduíno. Para utilizar a plataforma, basta criar uma conta no <a href="https://www.tinkercad.com/">site oficial</a> e após com um simples clique é possível criar um novo projeto de circuitos. </p>
+<p><img src="introducao/./images/tinkercad-1.png" alt="Página de projetos de circuitos" /></p>
+<p>O Tinkercad oferece uma vasta gama de componentes eletrônicos para utilizar, que aparecem no painel à direita, existem várias categorias de componentes, desde os básicos (leds, botões, sensores e baterias), circuitos integrados, transistores, chips de lógica, instrumentos de medida (multímetro, osciloscópio) e microcontroladores (incluindo o Arduíno Uno R3). Um laboratório completo onde o limite é a imaginação do usuário. Por ter uma interface drag-and-drop, basta arrastar os componentes para a posição desejada. Tente arrastar uma placa Arduino para a área de projeto, como na imagem abaixo, caso não consiga encontrar a placa, basta digitar seu nome na barra de busca acima da lista de componentes.</p>
+<p><img src="introducao/./images/tinkercad-2.png" alt="Espaço de trabalho" /></p>
+<p>Você notará que na barra superior existe um botão de código, ao clicar nele a aba de programação é aberta.  O Tinkercad possibilita dois tipos de programação, uma utilizando código, da mesma forma que se programa em uma IDE e em forma de blocos, baseada na linguagem Scratch.</p>
+<p><img src="introducao/./images/tinkercad-3.png" alt="Códigos de blocos" /></p>
+<p>É possível notar que no exemplo padrão, o LED incorporado à placa (ver <a href="introducao/./anatomia-do-arduino-uno.html">Anatomia do Arduíno</a>) irá piscar com um intervalo de 1 segundo. Ao clicar em <code>Iniciar simulação</code>, na barra superior, é possível ver esse comportamento na placa. 
+Não só é possível programar em blocos, mas também ver o equivalente em código, assim, a ferramenta acaba se tornando poderosíssima no aprendizado, visto que traduz algo em uma linguagem simples e visual em código para o arduino. Para habilitar essa visualização, basta mudar do modo <code>Blocos</code> para <code>Blocos + texto</code>. Para este exemplo inicial de piscar o led temos exatamente o mesmo código de exemplo que foi utilizado para testar a IDE. Note que não é possível editar o texto, para fazer isso é necessário mudar para o modo <code>Texto</code></p>
+<p><strong>CUIDADO:</strong> Ao mudar para o modo <code>Texto</code> uma mensagem de aviso é mostrada na tela. Esteja ciente que ao clicar em Continuar, todos os blocos serão perdidos. O código gerado por eles continuaram, mas o processo inverso NÃO É POSSÍVEL. Ou seja, uma vez mudado para o modo onde o texto do código é editável, não é possível retornar ao modo de edição em blocos, e qualquer tentativa de fazer isso fará com que seu código vire o exemplo padrão (LED embutido piscando a cada 1 segundo).</p>
+<h1><a class="header" href="#hardware-básicos" id="hardware-básicos">Hardware básicos</a></h1>
+<h1><a class="header" href="#protoboard" id="protoboard">Protoboard</a></h1>
+<p>Também conhecida como “placa de ensaio”, “matriz de contato” ou até mesmo “breadboard”, a Protoboard,  como é comumente chamada no meio do Arduino, é uma placa com furos com linhas de contatos entre eles, utilizada na montagem de protótipos. Se encaixa perfeitamente no contexto no contexto desse curso. Testes e modificações são partes quase que intrínsecas de um projeto em Arduino, ainda mais quando se está no processo de aprendizagem. </p>
+<p>Protoboards consistem basicamente dois grupos faixas, são eles:</p>
+<ul>
+<li>Faixa de terminais: faixa de contatos onde são instalados os componentes eletrônicos. São trilhas dispostas na vertical, geralmente em grupos de cinco conectores e com um entalhe, demarcando a linha central da placa (que normalmente é espelhada) e para melhor acomodamento de circuitos integrados e outros componentes que possam a vir a ser instalados.</li>
+<li>Faixa de barramentos: Usadas para o fornecimento de tensão ao circuito, constituída de duas faixas horizontais na extremidade, uma reservada para o condutor negativo (terra, marcada em preta ou azul) e outra para o positivo, marcada em vermelho. </li>
+</ul>
+<p>É possível imaginar elas como se fosse um único fio (e de fato há uma pequena faixa metálica conectando eles) assim ao plugar um componente em um terminal, é como conectar ele a todos outros componentes em toda faixa. É possível ver o alinhamento dos terminais na imagem abaixo.</p>
+<p><img src="introducao/./images/protoboard-1.png" alt="Protoboard" /></p>
+<p>Poder facilmente modificar posições de peças, rearranjar cabos, adicionar novos componentes é [NÃO TO CONSEGUINDO ESCREVER ALGO LEGAL AQUI, era pra ser algo positivo]. Porém existem lados negativos em seu uso, “mau-contato” entre os terminais, resistência entre os contatos da placa e os componentes encaixados além de que um elevado número de “jumpers” pode causar interferência em outros componentes, por isso, recomenda-se o uso de “jumpers” curtos e não se fazer muitos cruzamentos entre eles.</p>
+<h1><a class="header" href="#leds-e-resistores" id="leds-e-resistores">LEDs e Resistores</a></h1>
+<h1><a class="header" href="#protoboard-1" id="protoboard-1">Protoboard</a></h1>
+<p>Também conhecida como “placa de ensaio”, “matriz de contato” ou até mesmo “breadboard”, a Protoboard,  como é comumente chamada no meio do Arduino, é uma placa com furos com linhas de contatos entre eles, utilizada na montagem de protótipos. Se encaixa perfeitamente no contexto no contexto desse curso. Testes e modificações são partes quase que intrínsecas de um projeto em Arduino, ainda mais quando se está no processo de aprendizagem. </p>
+<p>Protoboards consistem basicamente dois grupos faixas, são eles:</p>
+<ul>
+<li>Faixa de terminais: faixa de contatos onde são instalados os componentes eletrônicos. São trilhas dispostas na vertical, geralmente em grupos de cinco conectores e com um entalhe, demarcando a linha central da placa (que normalmente é espelhada) e para melhor acomodamento de circuitos integrados e outros componentes que possam a vir a ser instalados.</li>
+<li>Faixa de barramentos: Usadas para o fornecimento de tensão ao circuito, constituída de duas faixas horizontais na extremidade, uma reservada para o condutor negativo (terra, marcada em preta ou azul) e outra para o positivo, marcada em vermelho. </li>
+</ul>
+<p>É possível imaginar elas como se fosse um único fio (e de fato há uma pequena faixa metálica conectando eles) assim ao plugar um componente em um terminal, é como conectar ele a todos outros componentes em toda faixa. É possível ver o alinhamento dos terminais na imagem abaixo.</p>
+<p><img src="introducao/./images/protoboard-1.png" alt="Protoboard" /></p>
+<p>Poder facilmente modificar posições de peças, rearranjar cabos, adicionar novos componentes é [NÃO TO CONSEGUINDO ESCREVER ALGO LEGAL AQUI, era pra ser algo positivo]. Porém existem lados negativos em seu uso, “mau-contato” entre os terminais, resistência entre os contatos da placa e os componentes encaixados além de que um elevado número de “jumpers” pode causar interferência em outros componentes, por isso, recomenda-se o uso de “jumpers” curtos e não se fazer muitos cruzamentos entre eles.</p>
+<h1><a class="header" href="#funções-básicas" id="funções-básicas">Funções Básicas</a></h1>
+<p>Nas próximas subseções serão apresentadas algumas funções básicas e necessárias para escrever um código em Arduíno. Demais funções de uso específico serão apresentadas ao decorrer do curso. Caso deseje ver a lista completa de funções, ela pode ser encontrada no site <a href="https://www.arduino.cc/reference/en/">Arduino Reference</a>. </p>
+<h1><a class="header" href="#setup-e-loop" id="setup-e-loop">setup() e loop()</a></h1>
+<h2><a class="header" href="#setup" id="setup">setup()</a></h2>
+<p>A função <code>setup()</code> é uma das duas funções que aparecem em seu editor de texto toda vez que um projeto novo é iniciado. Ela é usada, por exemplo, para inicializar variáveis, definir os modos dos pinos, inicializar a comunicação serial e bibliotecas. A função <code>setup()</code> só irá rodar quando a placa for ligada ou reiniciada. </p>
+<h2><a class="header" href="#loop" id="loop">loop()</a></h2>
+<p>A função <code>loop()</code> também aparece em seu editor de texto toda vez que um projeto novo é iniciado e irá executar após o <code>setup()</code>. O nome é sugestivo, tudo que estará dentro dessa função é repetido consecutivamente, assim o programa pode mudar e responder de acordo com os inputs recebidos pela placa.</p>
+<h1><a class="header" href="#funções-de-entrada-e-saída" id="funções-de-entrada-e-saída">Funções de Entrada e Saída</a></h1>
+<h2><a class="header" href="#pinmode" id="pinmode">pinMode()</a></h2>
+<p>Na função <code>pinMode()</code> é feita a configuração de um pino digital como sendo de entrada (INPUT) ou saída (OUTPUT). Ela é normalmente utilizada dentro da função <code>setup()</code>. É de extrema importância que todos os pinos utilizados sejam configurados através dessa função.</p>
+<p>Para o funcionamento correto da função, deve-se seguir a seguinte sintaxe: <code>pinMode(pino, modo)</code>.
+Onde <code>pino</code> é o número do pino que deseja-se aplicar o <code>modo</code>, que pode ser <code>INPUT</code> ou <code>OUTPUT</code>.</p>
+<h2><a class="header" href="#digitalread" id="digitalread">digitalRead()</a></h2>
+<p>A função <code>digitalRead()</code>  retorna o valor lido em um pino digital específico, que irá retornar <code>LOW</code> (quando não há corrente passando pelo pino) ou <code>HIGH</code> (quando há corrente passando pelo pino).</p>
+<p>A sintaxe da função é dada por: <code>digitalReal(pino)</code>, onde o parâmetro <code>pino</code> é dado pelo número do pino que deseja-se ler.</p>
+<h2><a class="header" href="#digitalwrite" id="digitalwrite">digitalWrite()</a></h2>
+<p>Já na função <code>digitalRead()</code> é escrio em um pino digital específico, ou seja, irá definir a voltagem que o pino estará emitindo, 5V ou 3,3V para o valor de <code>HIGH</code> ou 0V para <code>LOW</code>.</p>
+<p>O uso da função é dado por <code>digitalWrite(pino, valor)</code>, onde <code>pino</code> é o número do pino que deseja-se inscrever o <code>valor</code> (<code>LOW</code> ou <code>HIGH</code>).</p>
+<h1><a class="header" href="#funções-de-tempo" id="funções-de-tempo">Funções de Tempo</a></h1>
+<p>Existem basicamente dois tipos de funções de tempo: um deles faz uma pausa e o outro retorna o tempo desde que a aplicação está rodando.</p>
+<h2><a class="header" href="#delay-e-delaymicrosseconds" id="delay-e-delaymicrosseconds">delay() e delayMicrosseconds()</a></h2>
+<p>Na função <code>delay()</code>, é passado como parâmetro um valor de tempo em milissegundos e ao executar, o programa entrará em modo de espera pelo tempo especificado. Caso seja necessário uma maior precisão, pode-se usar a função <code>delayMicroseconds()</code> que como o nome sugere, executará uma pausa no programa de acordo com o valor em microssegundos que foi passado para o programa.</p>
+<h2><a class="header" href="#millis-e-micros" id="millis-e-micros">millis() e micros()</a></h2>
+<p>Com a função <code>millis()</code> é possível obter o tempo em milissegundos que decorreu desde que a placa Arduino começou a rodar o programa. Também existe a versão em microsegundos, dada pela função <code>micros()</code>. </p>
+<p>Há uma diferença no formato do valor passado para as funções, enquanto as que operam sobre milissegundos utilizam no formato <code>unsigned long</code>, podendo variar de 0 a 4.294.967.295, enquanto as que opera sobre microssegundos utilizam-se de formatos em <code>unsigned int</code>, limitando sua capacidade de 0 a 65.535. Assim, a função  <code>micros()</code> pode armazenar um tempo de até aproximadamente 70 minutos enquanto a função  <code>millis()</code> armazena aproximadamente 50 dias. Ao atingir o valor máximo, acontece um <em>overflow</em>, fazendo com que o valor retorne a 0, recomeçando a contagem.</p>
+<p><code>1 segundo = 1.000 milissegundos = 1.000.000 microsegundos</code></p>
+<h1><a class="header" href="#primeiro-projeto---contador-binário" id="primeiro-projeto---contador-binário">Primeiro projeto - Contador binário</a></h1>
+<p>Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, juntar esse conhecimento e fazer um projeto na prática é essencial para o fixamento do aprendizado. Aqui você aprenderá a fazer um contador binário de 4 bits, ou seja, contará de 0 a 15. </p>
+<h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
+<h4><a class="header" href="#materiais-necessários" id="materiais-necessários">Materiais necessários</a></h4>
+<ul>
+<li>4 LEDs </li>
+<li>4 resistores de 330 Ω</li>
+<li>5 jumpers</li>
+</ul>
+<h4><a class="header" href="#esquemático" id="esquemático">Esquemático</a></h4>
+<p><img src="projetos/./images/contador-binario.png" alt="Esquemático do projeto" /></p>
+<p>Utilize jumpers para conectar o terminal positivo (Anodo) de cada um dos LEDs em um pino digital da placa. A escolha dos pinos é arbitrária, mas lembre-se de inserir corretamente no momento de escrever o software. 
+Insira nos terminais negativos (Catodo) o resistor, conectando a trilha negativa da faixa de barramentos e um jumper conectando a trilha ao pino GND da placa. </p>
+<h2><a class="header" href="#software" id="software">Software</a></h2>
+<p>Primeiramente é necessário fazer uma declaração para ter um controle mais facilitado sobre os LEDs. Para isso basta inserir no início do código <code>int led[] = {3, 4, 5, 6};</code>. Neste vetor você deve colocar os pinos digitais em que os leds estarão conectados na placa Arduino.
+Após, dentro da função <code>setup()</code> precisa-se configurar os pinos dos leds como <code>OUTPUT</code>, a função ficará da seguinte forma:</p>
+<pre><code class="language-C">void setup()
+{
+    pinMode(led[0], OUTPUT);
+    pinMode(led[1], OUTPUT);
+    pinMode(led[2], OUTPUT);
+    pinMode(led[3], OUTPUT);
+}
+</code></pre>
+<p>Uma forma alternativa e mais otimizada de realizar tal operação é utilizar um laço, como estamos lidando com vetores, isso aparece naturalmente, a função ficará da seguinte forma:</p>
+<pre><code class="language-C">void setup()
+{
+  for (int i=0; i&lt;4; i++)
+  {
+    pinMode(led[i], OUTPUT);
+  }
+}
+</code></pre>
+<p>Com todos os pinos configurados, é possível trabalhar agora na função <code>loop()</code>. Como a contagem é de 0 a 15, é necessário fazer um laço <code>for()</code> apropriado para isso onde será criada uma variável, chamada de <code>num</code> que irá percorrer de 0 até 15.</p>
+<p><code>for (byte num=0; num&lt;=15; num++)</code></p>
+<h3><a class="header" href="#a-função-bitread" id="a-função-bitread">A função bitRead()</a></h3>
+<p>A função <code>bitRead(num, n)</code> é essencial para este projeto, a função lê o bit <code>n</code> (sendo 0 o bit menos significativo) de um dado valor <code>num</code>. Por exemplo, o valor 13 que é representado em binário como sendo <code>1101</code>, os bits <strong>0</strong>, <strong>2</strong> e <strong>3</strong> são <em>1</em>, enquanto o bit <strong>1</strong> é <em>0</em>. 
+Será necessário checar cada um dos 4 bits da variável <code>num</code>, para que os LEDs possam ser definidos de acordo com o valor retornado pela função <code>readBit()</code>. Para isso, outro laço deve ser criado <code>for (int n=0; n&lt;=3; n++)</code>. A cada iteração do laço, será feita a verificação de cada bit do número, utilizando a função <code>bitRead()</code>, caso ela retorne <code>1</code>, o um sinal <code>HIGH</code>será enviado para o pino do LED, fazendo com que ele acenda, caso contrário, um sinal <code>LOW</code>, fazendo com que ele apague.</p>
+<pre><code class="language-C">if (bitRead(num, n) == 1)   
+  {
+    digitalWrite(led[n], HIGH);
+  }
+    else
+  {
+    digitalWrite(led[n], LOW);
+  }
+}
+
+</code></pre>
+<p>Tecnicamente, o contador está pronto. Mas o que acontecerá ao rodar o código desta maneira? Você provavelmente irá ver todos os leds acesos, ou até quem sabe apagados. Isso acontece pois o código roda tão rápido e os LEDs estão constantemente se acendendo e apagando que você tem uma impressão de continuidade. Para que possa-se ver os efeitos do contador nos LEDs, é necessário usar uma função de delay. 2 segundos é um bom tempo para ver o contador funcionando. Acrescente após o laço for <code>delay(2000);</code>.</p>
+<p>O código completo ficará da seguinte maneira: </p>
+<pre><code class="language-C">int led[] = {2, 3, 4, 5};   // Vetor representando os pinos dos leds
+
+void setup()
+{
+  // Seta todos os pinos dos leds como OUTPUT
+  for (int i=0; i&lt;4; i++)
+  {
+    pinMode(led[i], OUTPUT);
+  }
+}
+
+void loop()
+{    
+  for (byte num=0; num&lt;=15; num++)
+  {
+    for (int n=0; n&lt;=3; n++)
+    {    
+      if (bitRead(num, n) == 1)   
+      {
+        // Se o bit lido for 1, o led na posição correspondente irá acender
+        digitalWrite(led[n], HIGH);
+      }
+      else
+      {
+        // Caso o bit for 0, o led irá apagar
+        digitalWrite(led[n], LOW);
+      }
+    }
+    // Delay de 2 segundos para o contador ser perceptível.
+    delay(2000);
+  }
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
