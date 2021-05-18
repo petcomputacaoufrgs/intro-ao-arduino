@@ -1,4 +1,5 @@
 # IDE
+
 O termo IDE vem de “Integrated Development Environment”, que em tradução livre significa “Ambiente de desenvolvimento Integrado”, é um software que reúne diversas ferramentas e automações para facilitar o desenvolvimento de softwares.
 
 A IDE do Arduino é de fácil uso e instalação, disponível para plataformas Windows, Linux e macOS. É possível encontrar o download em [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software). Também pode-se baixar em diversas lojas de aplicativos, como a Microsoft Store, para a plataforma Windows. A seção [Baixando e instalando a IDE](instalacao-ide.md) descreve um passo a passo de como fazer o download e a instalção na plataforma Windows.

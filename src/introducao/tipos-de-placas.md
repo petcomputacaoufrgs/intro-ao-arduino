@@ -16,3 +16,5 @@ Devido ao grande números de pinos de entrada e saída (54 digitais e 16 analóg
 
 #### Arduino Due
 Esta placa possui o mesmo número de pinos do modelo Mega, porém nela há um processador ARM de 32 bits, isso significa uma maior capacidade de processamento comparado aos outros modelos Arduino. Além disso, ela possui duas portas USB. Além da porta para comunicação com outro computador, há uma porta  que permite conexão com periféricos, aumentando ainda mais a sua aplicabilidade.
+
+[//]: # (colocar imagens das placas retirando-as do site oficial do arduino dando creditos)
