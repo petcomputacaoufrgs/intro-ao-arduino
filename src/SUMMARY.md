@@ -12,7 +12,7 @@
 - [Hardware básicos](./funcoes-basicas/hardware-basicos.md)
     - [Protoboard](./introducao/protoboard.md)
     - [LEDs e Resistores](./introducao/led.md)
-    - [Botão tátil](./introducao/protoboard.md)
+    - [Botão tátil](./introducao/botao.md)
 - [Funções Básicas](./funcoes-basicas/funcoes-basicas.md)
     - [setup() e loop()](./funcoes-basicas/setup-loop.md)
     - [Funções de Entrada e Saída](./funcoes-basicas/entrada-saida.md)
