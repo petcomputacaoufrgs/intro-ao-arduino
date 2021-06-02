@@ -1,6 +1,6 @@
 # Primeiro projeto - Contador binário
 
-Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, juntar esse conhecimento e fazer um projeto na prática é essencial para o fixamento do aprendizado. Aqui você aprenderá a fazer um contador binário de 4 bits, ou seja, contará de 0 a 15. 
+Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, juntar esse conhecimento e fazer um projeto pequeno projeto, pois a prática é essencial para o fixamento do aprendizado. Aqui você aprenderá a fazer um contador binário de 4 bits, ou seja, contará de 0 a 15. 
 
 ### Hardware
 #### Materiais necessários
@@ -62,7 +62,9 @@ Tecnicamente, o contador está pronto. Mas o que acontecerá ao rodar o código 
 O código completo ficará da seguinte maneira: 
 
 
-```C
+``` C
+/* Programa com a implementação de um contador binário de 4 bits utilizando LEDs */
+
 int led[] = {2, 3, 4, 5};   // Vetor representando os pinos dos leds
 
 void setup()

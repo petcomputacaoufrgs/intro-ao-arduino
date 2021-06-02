@@ -18,3 +18,4 @@
     - [Funções de Entrada e Saída](./funcoes-basicas/entrada-saida.md)
     - [Funções de Tempo](./funcoes-basicas/tempo.md)
 - [Primeiro projeto - Contador binário](./projetos/contador-binario.md)
+- [PWM - Controlando intensidade do LED](./projetos/pwm.md)
