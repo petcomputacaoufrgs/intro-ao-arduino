@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Primeiro projeto - Contador binário</title>
+        <title>PWM - Controlando intensidade do LED</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introducao/introducao.html"><strong aria-hidden="true">1.</strong> Introdução</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/o-que-e-arduino.html"><strong aria-hidden="true">1.1.</strong> O que é o Arduino?</a></li><li class="chapter-item expanded "><a href="../introducao/por-que-arduino.html"><strong aria-hidden="true">1.2.</strong> Por que Arduino?</a></li><li class="chapter-item expanded "><a href="../introducao/tipos-de-placas.html"><strong aria-hidden="true">1.3.</strong> Tipos de placas</a></li><li class="chapter-item expanded "><a href="../introducao/anatomia-do-arduino-uno.html"><strong aria-hidden="true">1.4.</strong> Anatomia do Arduino UNO</a></li><li class="chapter-item expanded "><a href="../introducao/ide.html"><strong aria-hidden="true">1.5.</strong> IDE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/instalacao-ide.html"><strong aria-hidden="true">1.5.1.</strong> Baixando e instalando a IDE</a></li><li class="chapter-item expanded "><a href="../introducao/arduino-editor.html"><strong aria-hidden="true">1.5.2.</strong> Arduino Editor - IDE online</a></li></ol></li><li class="chapter-item expanded "><a href="../introducao/tinkercad.html"><strong aria-hidden="true">1.6.</strong> Plataforma Tinkercad</a></li></ol></li><li class="chapter-item expanded "><a href="../funcoes-basicas/hardware-basicos.html"><strong aria-hidden="true">2.</strong> Hardware básicos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/protoboard.html"><strong aria-hidden="true">2.1.</strong> Protoboard</a></li><li class="chapter-item expanded "><a href="../introducao/led.html"><strong aria-hidden="true">2.2.</strong> LEDs e Resistores</a></li><li class="chapter-item expanded "><a href="../introducao/botao.html"><strong aria-hidden="true">2.3.</strong> Botão tátil</a></li></ol></li><li class="chapter-item expanded "><a href="../funcoes-basicas/funcoes-basicas.html"><strong aria-hidden="true">3.</strong> Funções Básicas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../funcoes-basicas/setup-loop.html"><strong aria-hidden="true">3.1.</strong> setup() e loop()</a></li><li class="chapter-item expanded "><a href="../funcoes-basicas/entrada-saida.html"><strong aria-hidden="true">3.2.</strong> Funções de Entrada e Saída</a></li><li class="chapter-item expanded "><a href="../funcoes-basicas/tempo.html"><strong aria-hidden="true">3.3.</strong> Funções de Tempo</a></li></ol></li><li class="chapter-item expanded "><a href="../projetos/contador-binario.html" class="active"><strong aria-hidden="true">4.</strong> Primeiro projeto - Contador binário</a></li><li class="chapter-item expanded "><a href="../projetos/pwm.html"><strong aria-hidden="true">5.</strong> PWM - Controlando intensidade do LED</a></li><li class="chapter-item expanded "><a href="../projetos/serial/monitor.html"><strong aria-hidden="true">6.</strong> Monitor Serial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../projetos/serial/medindo-luminosidade.html"><strong aria-hidden="true">6.1.</strong> Medindo a luminosidade do ambiente</a></li><li class="chapter-item expanded "><a href="../projetos/serial/controlando-led.html"><strong aria-hidden="true">6.2.</strong> Controlando LED RGB através do computador</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introducao/introducao.html"><strong aria-hidden="true">1.</strong> Introdução</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/o-que-e-arduino.html"><strong aria-hidden="true">1.1.</strong> O que é o Arduino?</a></li><li class="chapter-item expanded "><a href="../introducao/por-que-arduino.html"><strong aria-hidden="true">1.2.</strong> Por que Arduino?</a></li><li class="chapter-item expanded "><a href="../introducao/tipos-de-placas.html"><strong aria-hidden="true">1.3.</strong> Tipos de placas</a></li><li class="chapter-item expanded "><a href="../introducao/anatomia-do-arduino-uno.html"><strong aria-hidden="true">1.4.</strong> Anatomia do Arduino UNO</a></li><li class="chapter-item expanded "><a href="../introducao/ide.html"><strong aria-hidden="true">1.5.</strong> IDE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/instalacao-ide.html"><strong aria-hidden="true">1.5.1.</strong> Baixando e instalando a IDE</a></li><li class="chapter-item expanded "><a href="../introducao/arduino-editor.html"><strong aria-hidden="true">1.5.2.</strong> Arduino Editor - IDE online</a></li></ol></li><li class="chapter-item expanded "><a href="../introducao/tinkercad.html"><strong aria-hidden="true">1.6.</strong> Plataforma Tinkercad</a></li></ol></li><li class="chapter-item expanded "><a href="../funcoes-basicas/hardware-basicos.html"><strong aria-hidden="true">2.</strong> Hardware básicos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/protoboard.html"><strong aria-hidden="true">2.1.</strong> Protoboard</a></li><li class="chapter-item expanded "><a href="../introducao/led.html"><strong aria-hidden="true">2.2.</strong> LEDs e Resistores</a></li><li class="chapter-item expanded "><a href="../introducao/botao.html"><strong aria-hidden="true">2.3.</strong> Botão tátil</a></li></ol></li><li class="chapter-item expanded "><a href="../funcoes-basicas/funcoes-basicas.html"><strong aria-hidden="true">3.</strong> Funções Básicas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../funcoes-basicas/setup-loop.html"><strong aria-hidden="true">3.1.</strong> setup() e loop()</a></li><li class="chapter-item expanded "><a href="../funcoes-basicas/entrada-saida.html"><strong aria-hidden="true">3.2.</strong> Funções de Entrada e Saída</a></li><li class="chapter-item expanded "><a href="../funcoes-basicas/tempo.html"><strong aria-hidden="true">3.3.</strong> Funções de Tempo</a></li></ol></li><li class="chapter-item expanded "><a href="../projetos/contador-binario.html"><strong aria-hidden="true">4.</strong> Primeiro projeto - Contador binário</a></li><li class="chapter-item expanded "><a href="../projetos/pwm.html" class="active"><strong aria-hidden="true">5.</strong> PWM - Controlando intensidade do LED</a></li><li class="chapter-item expanded "><a href="../projetos/serial/monitor.html"><strong aria-hidden="true">6.</strong> Monitor Serial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../projetos/serial/medindo-luminosidade.html"><strong aria-hidden="true">6.1.</strong> Medindo a luminosidade do ambiente</a></li><li class="chapter-item expanded "><a href="../projetos/serial/controlando-led.html"><strong aria-hidden="true">6.2.</strong> Controlando LED RGB através do computador</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,105 +147,82 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#primeiro-projeto---contador-binário" id="primeiro-projeto---contador-binário">Primeiro projeto - Contador binário</a></h1>
-<p>Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, juntar esse conhecimento e fazer um projeto pequeno projeto, pois a prática é essencial para o fixamento do aprendizado. Aqui você aprenderá a fazer um contador binário de 4 bits, ou seja, contará de 0 a 15. </p>
+                        <h1><a class="header" href="#pwm---controlando-intensidade-do-led" id="pwm---controlando-intensidade-do-led">PWM - Controlando intensidade do LED</a></h1>
+<p>PWM vem do inglês Pulse Width Modulation, é uma técnica para obter resultados analógicos utilizando sinais digitais. Ondas quadradas são geradas, mudando do nível lógico <em>alto</em> para <em>baixo</em>, e o tempo relativo em que a onda passa em cada um desses estados acaba simulando voltagens entre 0V e 5V.</p>
+<p>Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível <em>baixo</em>, ela emitirá 0V. Caso o pulso passe o mesmo tempo em nível <em>baixo</em> e <em>alto</em>, a largura da onda será de 50% emitindo assim 2.75V.</p>
+<p>A placa Arduino UNO possui 6 pinos digitais que suportam o PWM. Eles são representados com um '<strong>~</strong>' logo ao lado da sua numeração, são eles os pinos de número <strong>3</strong>, <strong>5</strong>, <strong>6</strong>, <strong>9</strong>, <strong>10</strong> e <strong>11</strong>. </p>
+<p>Para controlar os ciclos ativos nas portas, é utilizada a função  <code>analogWrite(pino, valor)</code>, onde <code>pino</code> deve ser um dos pinos PWM e <code>valor</code>deve ser um inteiro entre 0 e 255 (emitindo 0v e 5v, respectivamente). </p>
+<p>Hora de colocar isso em prática. A seguir será demonstrado um programa simples para fazer com que um LED vá aumentando e diminuindo seu brilho, em um efeito pulsante, utilizando as portas digitais com suporte a PWM.</p>
 <h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários" id="materiais-necessários">Materiais necessários</a></h4>
 <ul>
-<li>4 LEDs </li>
-<li>4 resistores de 330 Ω</li>
-<li>5 jumpers</li>
+<li>1 LED </li>
+<li>1 Resistor de 330Ω</li>
 </ul>
 <h4><a class="header" href="#esquemático" id="esquemático">Esquemático</a></h4>
-<p><img src="./images/contador-binario.png" alt="Esquemático do projeto" /></p>
-<p>Utilize jumpers para conectar o terminal positivo (Anodo) de cada um dos LEDs em um pino digital da placa. A escolha dos pinos é arbitrária, mas lembre-se de inserir corretamente no momento de escrever o software. 
-Insira nos terminais negativos (Catodo) o resistor, conectando a trilha negativa da faixa de barramentos e um jumper conectando a trilha ao pino GND da placa. </p>
-<h2><a class="header" href="#software" id="software">Software</a></h2>
-<p>Primeiramente é necessário fazer uma declaração para ter um controle mais facilitado sobre os LEDs. Para isso basta inserir no início do código <code>int led[] = {3, 4, 5, 6};</code>. Neste vetor você deve colocar os pinos digitais em que os leds estarão conectados na placa Arduino.
-Após, dentro da função <code>setup()</code> precisa-se configurar os pinos dos leds como <code>OUTPUT</code>, a função ficará da seguinte forma:</p>
-<pre><code class="language-C">void setup()
-{
-    pinMode(led[0], OUTPUT);
-    pinMode(led[1], OUTPUT);
-    pinMode(led[2], OUTPUT);
-    pinMode(led[3], OUTPUT);
-}
+<p><img src="./images/pwm.png" alt="Esquemático do projeto" /></p>
+<p>A montagem do hardware é muito simples, basta conectar o ânodo do LED em um pino digital com suporte à PWM, neste exemplo é utilizado o <code>pino 3</code>, mas sinta-se livre para utilizar qualquer um dos outros pinos, apenas lembre-se de declarar ele corretamente no momento em que for escrever o código! Também é necessário conectar o cátodo do LED ao resistor, o qual deve ser conectado ao terminal GND. Abaixo uma imagem demonstrando o esquemático para este projeto.</p>
+<h3><a class="header" href="#software" id="software">Software</a></h3>
+<p>Primeiramente será necessário declarar em qual porta está conectado o LED, o brilho inicial, que será 0, ou seja, o led apagado e também precisaremos de um valor que representará a taxa com que o brilho irá se modificar, aqui será definido como 5. Assim o primeiro bloco de código fica :</p>
+<pre><code class="language-C">int led = 3;		// Pino PWM em que o LED está conectado
+int brilho = 0;		// Brilho inicial do LED
+int taxa = 5;		// Taxa com que o brilho se modificará a cada iteração
 </code></pre>
-<p>Uma forma alternativa e mais otimizada de realizar tal operação é utilizar um laço, como estamos lidando com vetores, isso aparece naturalmente, a função ficará da seguinte forma:</p>
-<pre><code class="language-C">void setup()
-{
-  for (int i=0; i&lt;4; i++)
-  {
-    pinMode(led[i], OUTPUT);
-  }
-}
-</code></pre>
-<p>Com todos os pinos configurados, é possível trabalhar agora na função <code>loop()</code>. Como a contagem é de 0 a 15, é necessário fazer um laço <code>for()</code> apropriado para isso onde será criada uma variável, chamada de <code>num</code> que irá percorrer de 0 até 15.</p>
-<p><code>for (byte num=0; num&lt;=15; num++)</code></p>
-<h3><a class="header" href="#a-função-bitread" id="a-função-bitread">A função bitRead()</a></h3>
-<p>A função <code>bitRead(num, n)</code> é essencial para este projeto, a função lê o bit <code>n</code> (sendo 0 o bit menos significativo) de um dado valor <code>num</code>. Por exemplo, o valor 13 que é representado em binário como sendo <code>1101</code>, os bits <strong>0</strong>, <strong>2</strong> e <strong>3</strong> são <em>1</em>, enquanto o bit <strong>1</strong> é <em>0</em>. 
-Será necessário checar cada um dos 4 bits da variável <code>num</code>, para que os LEDs possam ser definidos de acordo com o valor retornado pela função <code>readBit()</code>. Para isso, outro laço deve ser criado <code>for (int n=0; n&lt;=3; n++)</code>. A cada iteração do laço, será feita a verificação de cada bit do número, utilizando a função <code>bitRead()</code>, caso ela retorne <code>1</code>, o um sinal <code>HIGH</code>será enviado para o pino do LED, fazendo com que ele acenda, caso contrário, um sinal <code>LOW</code>, fazendo com que ele apague.</p>
-<pre><code class="language-C">if (bitRead(num, n) == 1)   
-  {
-    digitalWrite(led[n], HIGH);
-  }
-    else
-  {
-    digitalWrite(led[n], LOW);
-  }
+<p>Na função <code>setup()</code> será necessário apenas declarar o pino como sendo de saída com o seguinte comando <code>pinMode(led, OUTPUT);</code>. Já na função <code>loop()</code> deve-se enviar para o pino o brilho que o LED deve assumir, incrementar ou decrementar o valor do brilho (bem como checar se ele chegou aos limites de 0 e 255) e por fim, mas não menos importante, acrescentar uma pausa no loop para que seja possível visualizar alguma mudança significativa no LED. </p>
+<pre><code class="language-C">analogWrite(led, brilho);   
+
+brilho = brilho + taxa;
+
+if (brilho &lt;= 0 || brilho &gt;= 255) {
+  taxa = -taxa;
 }
 
+delay(100);
 </code></pre>
-<p>Tecnicamente, o contador está pronto. Mas o que acontecerá ao rodar o código desta maneira? Você provavelmente irá ver todos os leds acesos, ou até quem sabe apagados. Isso acontece pois o código roda tão rápido e os LEDs estão constantemente se acendendo e apagando que você tem uma impressão de continuidade. Para que possa-se ver os efeitos do contador nos LEDs, é necessário usar uma função de delay. 2 segundos é um bom tempo para ver o contador funcionando. Acrescente após o laço for <code>delay(2000);</code>.</p>
-<p>O código completo ficará da seguinte maneira: </p>
-<pre><code class="language-C">/* Programa com a implementação de um contador binário de 4 bits utilizando LEDs */
+<p>Abaixo está o código completo para este programa</p>
+<pre><code class="language-C">/* Utilizando PWM para controlar a intensidade ded um LED */
 
-int led[] = {2, 3, 4, 5};   // Vetor representando os pinos dos leds
+int led = 3;      // Pino PWM em que o LED está conectado
+int brilho = 0;   // Brilho inicial do LED
+int taxa = 5;     // Taxa com que o brilho se modificará a cada iteração
 
-void setup()
-{
-  // Seta todos os pinos dos leds como OUTPUT
-  for (int i=0; i&lt;4; i++)
-  {
-    pinMode(led[i], OUTPUT);
-  }
+void setup() {
+  // Declara o pino do LED como sendo de saída
+  pinMode(led, OUTPUT);
 }
 
-void loop()
-{    
-  for (byte num=0; num&lt;=15; num++)
-  {
-    for (int n=0; n&lt;=3; n++)
-    {    
-      if (bitRead(num, n) == 1)   
-      {
-        // Se o bit lido for 1, o led na posição correspondente irá acender
-        digitalWrite(led[n], HIGH);
-      }
-      else
-      {
-        // Caso o bit for 0, o led irá apagar
-        digitalWrite(led[n], LOW);
-      }
-    }
-    // Delay de 2 segundos para o contador ser perceptível.
-    delay(2000);
+void loop() {
+  // Define o brilho do LED
+  analogWrite(led, brilho);   
+
+  // Muda o valor do brilho para que a próxima iteração do loop
+  // a voltagem no pino possa ser modificada
+  brilho = brilho + taxa;
+
+  // Caso estiver nos limites dos valores aceitos pela porta PWM,
+  // inverte-se a taxa com que o valor do brilho é modificado
+  if (brilho &lt;= 0 || brilho &gt;= 255) {
+    taxa = -taxa;
   }
+  // Tempo de espera para a proxima iteração, para ser perceptivel 
+  // a mudança no brilho do LED
+  delay(100);
 }
 </code></pre>
+<p>Ao compilar e enviar o código para a placa, você notará que o LED estará desligado e aumentará seu brilho até atingir um pico, e depois irá se apagando aos poucos. Caso queira que o pulso seja mais rápido, basta modificar o valor da taxa e/ou o tempo na função <code>delay()</code>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../funcoes-basicas/tempo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../projetos/contador-binario.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../projetos/pwm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../projetos/serial/monitor.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -257,13 +234,13 @@ void loop()
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../funcoes-basicas/tempo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../projetos/contador-binario.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../projetos/pwm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../projetos/serial/monitor.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
