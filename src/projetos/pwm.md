@@ -4,6 +4,8 @@ PWM vem do inglês Pulse Width Modulation, é uma técnica para obter resultados
 
 Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível *baixo*, ela emitirá 0V. Caso o pulso passe o mesmo tempo em nível *baixo* e *alto*, a largura da onda será de 50% emitindo assim 2.75V.
 
+[//]: # (Colocar gráficos representando isso)
+
 A placa Arduino UNO possui 6 pinos digitais que suportam o PWM. Eles são representados com um '__~__' logo ao lado da sua numeração, são eles os pinos de número __3__, __5__, __6__, __9__, __10__ e __11__. 
 
 Para controlar os ciclos ativos nas portas, é utilizada a função  `analogWrite(pino, valor)`, onde `pino` deve ser um dos pinos PWM e `valor`deve ser um inteiro entre 0 e 255 (emitindo 0v e 5v, respectivamente). 
@@ -13,10 +15,10 @@ Hora de colocar isso em prática. A seguir será demonstrado um programa simples
 
 ### Hardware
 #### Materiais necessários
-1x LED 
-1x Resistor de 330Ω
++ 1 LED 
++ 1 Resistor de 330Ω
 
-#Esquemático
+#### Esquemático
 
 ![Esquemático do projeto](./images/pwm.png)
 

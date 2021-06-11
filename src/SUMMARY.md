@@ -19,3 +19,6 @@
     - [Funções de Tempo](./funcoes-basicas/tempo.md)
 - [Primeiro projeto - Contador binário](./projetos/contador-binario.md)
 - [PWM - Controlando intensidade do LED](./projetos/pwm.md)
+- [Monitor Serial](./projetos/serial/monitor.md)
+    - [Medindo a luminosidade do ambiente](./projetos/serial/medindo-luminosidade.md)
+    - [Controlando LED RGB através do computador](./projetos/serial/controlando-led.md)
