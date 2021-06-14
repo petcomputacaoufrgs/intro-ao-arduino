@@ -1,6 +1,6 @@
 # Anatomia do Arduino UNO
 
-Nesta seção, será apresentado algumas partes básicas do arduino que serão referenciadas ao longo do curso. Caso não entenda algum termo aqui, não se preocupe, tudo será explicado detalhadamente nos próximos capítulos. 
+Nesta seção, serão apresentadas algumas partes básicas do arduino que serão referenciadas ao longo do curso. Caso não entenda algum termo aqui, não se preocupe, tudo será explicado detalhadamente nos próximos capítulos. 
 
  ![Anatomia da placa](./images/anatomia-placa.png)
 

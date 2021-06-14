@@ -10,10 +10,10 @@ Onde `pino` é o número do pino que deseja-se aplicar o `modo`, que pode ser `I
 ## digitalRead()
 A função `digitalRead()`  retorna o valor lido em um pino digital específico, que irá retornar `LOW` (quando não há corrente passando pelo pino) ou `HIGH` (quando há corrente passando pelo pino).
 
-A sintaxe da função é dada por: `digitalReal(pino)`, onde o parâmetro `pino` é dado pelo número do pino que deseja-se ler.
+A sintaxe da função é dada por: `digitalRead(pino)`, onde o parâmetro `pino` é dado pelo número do pino que se deseja ler.
 
 
 ## digitalWrite()
-Já na função `digitalRead()` é escrio em um pino digital específico, ou seja, irá definir a voltagem que o pino estará emitindo, 5V ou 3,3V para o valor de `HIGH` ou 0V para `LOW`.
+Já na função `digitalWrite()` é possível escrever em um pino digital específico, ou seja, serve para definir a voltagem que o pino estará emitindo, 5V ou 3,3V para o valor de `HIGH` ou 0V para `LOW`.
 
-O uso da função é dado por `digitalWrite(pino, valor)`, onde `pino` é o número do pino que deseja-se inscrever o `valor` (`LOW` ou `HIGH`).
+A sintaxe da função é dada por `digitalWrite(pino, valor)`, onde `pino` é o número do pino que deseja-se inscrever o `valor` (`LOW` ou `HIGH`).
