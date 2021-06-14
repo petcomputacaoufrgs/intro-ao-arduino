@@ -148,10 +148,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#pwm---controlando-intensidade-do-led" id="pwm---controlando-intensidade-do-led">PWM - Controlando intensidade do LED</a></h1>
-<p>PWM vem do inglês Pulse Width Modulation, é uma técnica para obter resultados analógicos utilizando sinais digitais. Ondas quadradas são geradas, mudando do nível lógico <em>alto</em> para <em>baixo</em>, e o tempo relativo em que a onda passa em cada um desses estados acaba simulando voltagens entre 0V e 5V.</p>
-<p>Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível <em>baixo</em>, ela emitirá 0V. Caso o pulso passe o mesmo tempo em nível <em>baixo</em> e <em>alto</em>, a largura da onda será de 50% emitindo assim 2.75V.</p>
-<p>A placa Arduino UNO possui 6 pinos digitais que suportam o PWM. Eles são representados com um '<strong>~</strong>' logo ao lado da sua numeração, são eles os pinos de número <strong>3</strong>, <strong>5</strong>, <strong>6</strong>, <strong>9</strong>, <strong>10</strong> e <strong>11</strong>. </p>
-<p>Para controlar os ciclos ativos nas portas, é utilizada a função  <code>analogWrite(pino, valor)</code>, onde <code>pino</code> deve ser um dos pinos PWM e <code>valor</code>deve ser um inteiro entre 0 e 255 (emitindo 0v e 5v, respectivamente). </p>
+<p>A sigla PWM vem do inglês Pulse Width Modulation, e é uma técnica para obter resultados analógicos utilizando sinais digitais. Ondas quadradas são geradas, mudando o nível lógico de <em>alto</em> para <em>baixo</em>, e o tempo relativo em que a onda passa em cada um desses estados acaba simulando voltagens entre 0V e 5V.</p>
+<p>Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível <em>baixo</em>, ela emitirá 0V. Caso o pulso passe o mesmo tempo nos níveis <em>baixo</em> e <em>alto</em>, a largura da onda será de 50% emitindo assim 2.75V.</p>
+<p>A placa Arduino UNO possui 6 pinos digitais que suportam o PWM. Eles são representados por um '<strong>~</strong>' ao lado da sua numeração, sendo eles os pinos de números <strong>3</strong>, <strong>5</strong>, <strong>6</strong>, <strong>9</strong>, <strong>10</strong> e <strong>11</strong>. </p>
+<p>Para controlar os ciclos ativos nas portas, é utilizada a função  <code>analogWrite(pino, valor)</code>, onde <code>pino</code> deve ser um dos pinos PWM e <code>valor</code> deve ser um inteiro entre 0 e 255 (emitindo 0v e 5v, respectivamente). </p>
 <p>Hora de colocar isso em prática. A seguir será demonstrado um programa simples para fazer com que um LED vá aumentando e diminuindo seu brilho, em um efeito pulsante, utilizando as portas digitais com suporte a PWM.</p>
 <h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários" id="materiais-necessários">Materiais necessários</a></h4>
@@ -161,9 +161,9 @@
 </ul>
 <h4><a class="header" href="#esquemático" id="esquemático">Esquemático</a></h4>
 <p><img src="./images/pwm.png" alt="Esquemático do projeto" /></p>
-<p>A montagem do hardware é muito simples, basta conectar o ânodo do LED em um pino digital com suporte à PWM, neste exemplo é utilizado o <code>pino 3</code>, mas sinta-se livre para utilizar qualquer um dos outros pinos, apenas lembre-se de declarar ele corretamente no momento em que for escrever o código! Também é necessário conectar o cátodo do LED ao resistor, o qual deve ser conectado ao terminal GND. Abaixo uma imagem demonstrando o esquemático para este projeto.</p>
+<p>A montagem do hardware é muito simples, basta conectar o ânodo do LED em um pino digital com suporte à PWM. Neste exemplo é utilizado o <code>pino 3</code>, mas sinta-se livre para utilizar qualquer um dos outros pinos, apenas lembre-se de declará-lo corretamente no momento em que for escrever o código! Também é necessário conectar o cátodo do LED ao resistor, que deve ser conectado ao terminal GND. Abaixo uma imagem demonstrando o esquemático para este projeto.</p>
 <h3><a class="header" href="#software" id="software">Software</a></h3>
-<p>Primeiramente será necessário declarar em qual porta está conectado o LED, o brilho inicial, que será 0, ou seja, o led apagado e também precisaremos de um valor que representará a taxa com que o brilho irá se modificar, aqui será definido como 5. Assim o primeiro bloco de código fica :</p>
+<p>Primeiramente, é necessário declarar em qual porta o LED está conectado e o brilho inicial, que será 0, (ou seja, o led apagado). Também será necessário um valor que representará a taxa com que o brilho irá se modificar, que aqui será definido como 5. Assim o primeiro bloco de código fica :</p>
 <pre><code class="language-C">int led = 3;		// Pino PWM em que o LED está conectado
 int brilho = 0;		// Brilho inicial do LED
 int taxa = 5;		// Taxa com que o brilho se modificará a cada iteração
@@ -180,7 +180,7 @@ if (brilho &lt;= 0 || brilho &gt;= 255) {
 delay(100);
 </code></pre>
 <p>Abaixo está o código completo para este programa</p>
-<pre><code class="language-C">/* Utilizando PWM para controlar a intensidade ded um LED */
+<pre><code class="language-C">/* Utilizando PWM para controlar a intensidade de um LED */
 
 int led = 3;      // Pino PWM em que o LED está conectado
 int brilho = 0;   // Brilho inicial do LED
@@ -195,7 +195,7 @@ void loop() {
   // Define o brilho do LED
   analogWrite(led, brilho);   
 
-  // Muda o valor do brilho para que a próxima iteração do loop
+  // Muda o valor do brilho para que na próxima iteração do loop
   // a voltagem no pino possa ser modificada
   brilho = brilho + taxa;
 
@@ -204,12 +204,12 @@ void loop() {
   if (brilho &lt;= 0 || brilho &gt;= 255) {
     taxa = -taxa;
   }
-  // Tempo de espera para a proxima iteração, para ser perceptivel 
+  // Tempo de espera para a proxima iteração, para que seja perceptivel 
   // a mudança no brilho do LED
   delay(100);
 }
 </code></pre>
-<p>Ao compilar e enviar o código para a placa, você notará que o LED estará desligado e aumentará seu brilho até atingir um pico, e depois irá se apagando aos poucos. Caso queira que o pulso seja mais rápido, basta modificar o valor da taxa e/ou o tempo na função <code>delay()</code>.</p>
+<p>Ao compilar e enviar o código para a placa, você notará que o LED começará desligado e irá aumentar seu brilho até atingir um pico, e depois irá se apagando aos poucos. Caso queira que o pulso seja mais rápido, basta modificar o valor da taxa e/ou o tempo na função <code>delay()</code>.</p>
 
                     </main>
 

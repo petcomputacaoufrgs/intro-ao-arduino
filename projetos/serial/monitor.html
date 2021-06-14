@@ -148,18 +148,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#monitor-serial" id="monitor-serial">Monitor Serial</a></h1>
-<p>O Monitor Serial é uma ferramenta muito útil na hora de interpretar dados de sensores, depurar e controlar a placa Arduino e através do computador. Para acessar a tela do Monitor Serial, certifique-se de que o Arduíno esteja conectado através da porta USB, e na sua IDE clique no ícone com uma lupa, no canto superior direito ou utilize o atalho <code>CTRL + SHIFT + M</code>.</p>
+<p>O Monitor Serial é uma ferramenta muito útil na hora de interpretar dados de sensores, depurar e controlar a placa Arduino através do computador. Para acessar a tela do Monitor Serial, certifique-se de que o Arduíno esteja conectado através da porta USB, e na sua IDE clique no ícone com uma lupa, no canto superior direito ou utilize o atalho <code>CTRL + SHIFT + M</code>.</p>
 <p><img src="./../images/serial-1.png" alt="Icone para abrir o monitor serial" /></p>
-<p>Para utilizar o Monitor Serial, deve-se primeiramente inicializa-lo dentro da função <code>setup()</code>, para isso, utiliza-se a função <code>Serial.begin(velocidade)</code>, onde o valor de <code>velocidade</code> está relacionado com a taxa de transmissão de dados. Nos diversos experimentos que estaremos fazendo aqui, estaremos utilizando por padrão o valor de <em>9600</em>, porém lembre-se de que isso não é uma regra! Esse valor pode (e deve) ser modificado de acordo com as necessidades de cada projeto.</p>
-<p>Na tabela abaixo são apresentadas algumas das funções mais comuns para manipular as portas serial.</p>
+<p>Para utilizar o Monitor Serial, deve-se primeiramente inicializa-lo dentro da função <code>setup()</code>. Para isso, utiliza-se a função <code>Serial.begin(velocidade)</code>, onde o valor de <code>velocidade</code> está relacionado com a taxa de transmissão de dados. Nos diversos experimentos realizados aqui, será utilizado por padrão o valor de <em>9600</em>, porém lembre-se de que isso não é uma regra! Esse valor pode (e deve) ser modificado de acordo com as necessidades de cada projeto.</p>
+<p>Na tabela abaixo são apresentadas algumas das funções mais comuns para manipular as portas seriais.</p>
 <table><thead><tr><th>Função</th><th>Descrição</th></tr></thead><tbody>
-<tr><td>available()</td><td>Retorna o número de bytes disponível para leitura (o buffer armazena até até 64 bytes).</td></tr>
-<tr><td>print()</td><td>Envia dados para o monitor serial no formato ASCII (ou seja, facilmente legível para humanos).</td></tr>
+<tr><td>available()</td><td>Retorna o número de bytes disponíveis para leitura (o buffer armazena até até 64 bytes).</td></tr>
+<tr><td>print()</td><td>Envia dados para o monitor serial no formato ASCII (que é facilmente legível para humanos).</td></tr>
 <tr><td>println()</td><td>Possui a mesma função que o print(), porém irá adicionar uma quebra de linha logo em seguida.</td></tr>
-<tr><td>read()</td><td>Retorna o primeiro byte de dados recebido disponível, ou -1 caso não haja nada disponível</td></tr>
-<tr><td>readBytes()</td><td>Lê caracteres da porta serial e os move para um buffer</td></tr>
-<tr><td>readBytesUntil()</td><td>Retorna o número de bytes lidos e colocados em um buffer. Os dados são lidos na porta seerial até que um caractere especificado seja atingido.</td></tr>
-<tr><td>write()</td><td>Envia dados em formato binário para a porta serial</td></tr>
+<tr><td>read()</td><td>Retorna o primeiro byte de dados recebidos disponível, ou -1 caso não haja nada disponível.</td></tr>
+<tr><td>readBytes()</td><td>Lê caracteres da porta serial e os move para um buffer.</td></tr>
+<tr><td>readBytesUntil()</td><td>Retorna o número de bytes lidos e os colocad em um buffer. Os dados são lidos na porta serial até que um caractere especificado seja atingido.</td></tr>
+<tr><td>write()</td><td>Envia dados em formato binário para a porta serial.</td></tr>
 </tbody></table>
 <p>Nos próximos tópicos serão apresentados alguns projetos simples demonstrando o funcionamento do Monitor Serial.</p>
 

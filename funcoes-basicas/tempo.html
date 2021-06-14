@@ -149,11 +149,11 @@
                     <main>
                         <h1><a class="header" href="#funções-de-tempo" id="funções-de-tempo">Funções de Tempo</a></h1>
 <p>Existem basicamente dois tipos de funções de tempo: um deles faz uma pausa e o outro retorna o tempo desde que a aplicação está rodando.</p>
-<h2><a class="header" href="#delay-e-delaymicrosseconds" id="delay-e-delaymicrosseconds">delay() e delayMicrosseconds()</a></h2>
+<h2><a class="header" href="#delay-e-delaymicroseconds" id="delay-e-delaymicroseconds">delay() e delayMicroseconds()</a></h2>
 <p>Na função <code>delay()</code>, é passado como parâmetro um valor de tempo em milissegundos e ao executar, o programa entrará em modo de espera pelo tempo especificado. Caso seja necessário uma maior precisão, pode-se usar a função <code>delayMicroseconds()</code> que como o nome sugere, executará uma pausa no programa de acordo com o valor em microssegundos que foi passado para o programa.</p>
 <h2><a class="header" href="#millis-e-micros" id="millis-e-micros">millis() e micros()</a></h2>
 <p>Com a função <code>millis()</code> é possível obter o tempo em milissegundos que decorreu desde que a placa Arduino começou a rodar o programa. Também existe a versão em microsegundos, dada pela função <code>micros()</code>. </p>
-<p>Há uma diferença no formato do valor passado para as funções, enquanto as que operam sobre milissegundos utilizam no formato <code>unsigned long</code>, podendo variar de 0 a 4.294.967.295, enquanto as que opera sobre microssegundos utilizam-se de formatos em <code>unsigned int</code>, limitando sua capacidade de 0 a 65.535. Assim, a função  <code>micros()</code> pode armazenar um tempo de até aproximadamente 70 minutos enquanto a função  <code>millis()</code> armazena aproximadamente 50 dias. Ao atingir o valor máximo, acontece um <em>overflow</em>, fazendo com que o valor retorne a 0, recomeçando a contagem.</p>
+<p>Há uma diferença no formato do valor passado para as funções, enquanto as que operam sobre milissegundos utilizam no formato <code>unsigned long</code>, podendo variar de 0 a 4.294.967.295, as que operam sobre microssegundos utilizam-se do formato <code>unsigned int</code>, no qual o alcance vai de 0 a 65.535. Assim, a função  <code>micros()</code> pode armazenar um tempo de até cerca de 70 minutos enquanto a função  <code>millis()</code> armazena aproximadamente 50 dias. Ao atingir o valor máximo, acontece um <em>overflow</em>, fazendo com que o valor retorne a 0, recomeçando a contagem.</p>
 <p><code>1 segundo = 1.000 milissegundos = 1.000.000 microsegundos</code></p>
 
                     </main>

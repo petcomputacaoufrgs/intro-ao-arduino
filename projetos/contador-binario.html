@@ -148,7 +148,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#primeiro-projeto---contador-binário" id="primeiro-projeto---contador-binário">Primeiro projeto - Contador binário</a></h1>
-<p>Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, juntar esse conhecimento e fazer um projeto pequeno projeto, pois a prática é essencial para o fixamento do aprendizado. Aqui você aprenderá a fazer um contador binário de 4 bits, ou seja, contará de 0 a 15. </p>
+<p>Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, utilizar esse conhecimento para criar um pequeno projeto, pois a prática é essencial para a fixação do aprendizado. Nesa seção você aprenderá a fazer um contador binário de 4 bits, ou seja, onde será possível contar de 0 a 15 utilizando LEDs. </p>
 <h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários" id="materiais-necessários">Materiais necessários</a></h4>
 <ul>
@@ -159,10 +159,10 @@
 <h4><a class="header" href="#esquemático" id="esquemático">Esquemático</a></h4>
 <p><img src="./images/contador-binario.png" alt="Esquemático do projeto" /></p>
 <p>Utilize jumpers para conectar o terminal positivo (Anodo) de cada um dos LEDs em um pino digital da placa. A escolha dos pinos é arbitrária, mas lembre-se de inserir corretamente no momento de escrever o software. 
-Insira nos terminais negativos (Catodo) o resistor, conectando a trilha negativa da faixa de barramentos e um jumper conectando a trilha ao pino GND da placa. </p>
+Insira nos terminais negativos (Catodo) os resistores, conectando a trilha negativa da faixa de barramentos. Insira também um jumper conectando a trilha ao pino GND da placa. </p>
 <h2><a class="header" href="#software" id="software">Software</a></h2>
-<p>Primeiramente é necessário fazer uma declaração para ter um controle mais facilitado sobre os LEDs. Para isso basta inserir no início do código <code>int led[] = {3, 4, 5, 6};</code>. Neste vetor você deve colocar os pinos digitais em que os leds estarão conectados na placa Arduino.
-Após, dentro da função <code>setup()</code> precisa-se configurar os pinos dos leds como <code>OUTPUT</code>, a função ficará da seguinte forma:</p>
+<p>Primeiramente é necessário fazer uma declaração para ter um controle mais facilitado sobre os LEDs. Para isso, basta inserir no início do código <code>int led[] = {3, 4, 5, 6};</code>. Neste vetor você deve colocar os pinos digitais em que os leds estarão conectados na placa Arduino.
+Em seguida, dentro da função <code>setup()</code>, é necessário configurar os pinos dos leds como <code>OUTPUT</code>. A função ficará da seguinte forma:</p>
 <pre><code class="language-C">void setup()
 {
     pinMode(led[0], OUTPUT);
@@ -171,7 +171,7 @@ Após, dentro da função <code>setup()</code> precisa-se configurar os pinos do
     pinMode(led[3], OUTPUT);
 }
 </code></pre>
-<p>Uma forma alternativa e mais otimizada de realizar tal operação é utilizar um laço, como estamos lidando com vetores, isso aparece naturalmente, a função ficará da seguinte forma:</p>
+<p>Uma forma alternativa e mais otimizada de realizar tal operação é utlizando um laço. Como se está utilizando vetores, isso aparece naturalmente, a função ficará da seguinte forma:</p>
 <pre><code class="language-C">void setup()
 {
   for (int i=0; i&lt;4; i++)
@@ -180,11 +180,11 @@ Após, dentro da função <code>setup()</code> precisa-se configurar os pinos do
   }
 }
 </code></pre>
-<p>Com todos os pinos configurados, é possível trabalhar agora na função <code>loop()</code>. Como a contagem é de 0 a 15, é necessário fazer um laço <code>for()</code> apropriado para isso onde será criada uma variável, chamada de <code>num</code> que irá percorrer de 0 até 15.</p>
+<p>Com todos os pinos configurados, é possível trabalhar agora na função <code>loop()</code>. Como a contagem é de 0 a 15, é necessário fazer um laço <code>for()</code> apropriado para isso, onde será criada uma variável chamada de <code>num</code> que percorrerá as posições de 0 até 15.</p>
 <p><code>for (byte num=0; num&lt;=15; num++)</code></p>
 <h3><a class="header" href="#a-função-bitread" id="a-função-bitread">A função bitRead()</a></h3>
-<p>A função <code>bitRead(num, n)</code> é essencial para este projeto, a função lê o bit <code>n</code> (sendo 0 o bit menos significativo) de um dado valor <code>num</code>. Por exemplo, o valor 13 que é representado em binário como sendo <code>1101</code>, os bits <strong>0</strong>, <strong>2</strong> e <strong>3</strong> são <em>1</em>, enquanto o bit <strong>1</strong> é <em>0</em>. 
-Será necessário checar cada um dos 4 bits da variável <code>num</code>, para que os LEDs possam ser definidos de acordo com o valor retornado pela função <code>readBit()</code>. Para isso, outro laço deve ser criado <code>for (int n=0; n&lt;=3; n++)</code>. A cada iteração do laço, será feita a verificação de cada bit do número, utilizando a função <code>bitRead()</code>, caso ela retorne <code>1</code>, o um sinal <code>HIGH</code>será enviado para o pino do LED, fazendo com que ele acenda, caso contrário, um sinal <code>LOW</code>, fazendo com que ele apague.</p>
+<p>A função <code>bitRead(num, n)</code> é essencial para este projeto. A função lê o bit <code>n</code> (sendo 0 o bit menos significativo) de um dado valor <code>num</code>. Por exemplo, para o valor 13, que é representado em binário como sendo <code>1101</code>, os bits <strong>0</strong>, <strong>2</strong> e <strong>3</strong> são <em>1</em>, enquanto o bit <strong>1</strong> é <em>0</em>. 
+Será necessário checar cada um dos 4 bits da variável <code>num</code> para que os LEDs possam ser definidos de acordo com o valor retornado pela função <code>readBit()</code>. Para isso, outro laço deve ser criado: <code>for (int n=0; n&lt;=3; n++)</code>. A cada iteração do laço, será feita a verificação de cada bit do número, utilizando a função <code>bitRead()</code>. Caso ela retorne <code>1</code>, o um sinal <code>HIGH</code>será enviado para o pino do LED, fazendo com que ele acenda; caso contrário, será enviado sinal <code>LOW</code>, fazendo com que ele apague.</p>
 <pre><code class="language-C">if (bitRead(num, n) == 1)   
   {
     digitalWrite(led[n], HIGH);
@@ -196,7 +196,7 @@ Será necessário checar cada um dos 4 bits da variável <code>num</code>, para 
 }
 
 </code></pre>
-<p>Tecnicamente, o contador está pronto. Mas o que acontecerá ao rodar o código desta maneira? Você provavelmente irá ver todos os leds acesos, ou até quem sabe apagados. Isso acontece pois o código roda tão rápido e os LEDs estão constantemente se acendendo e apagando que você tem uma impressão de continuidade. Para que possa-se ver os efeitos do contador nos LEDs, é necessário usar uma função de delay. 2 segundos é um bom tempo para ver o contador funcionando. Acrescente após o laço for <code>delay(2000);</code>.</p>
+<p>Tecnicamente, o contador está pronto. Mas o que acontecerá ao rodar o código desta maneira? Você provavelmente verá todos os leds acesos, ou até quem sabe apagados. Isso acontece pois o código roda tão rápido e os LEDs estão constantemente se acendendo e apagando que você tem uma impressão de continuidade. Para que seja possível ver os efeitos do contador nos LEDs, é necessário utilizar uma função de delay. 2 segundos é um bom tempo para ver o contador funcionando. Acrescente após o laço for <code>delay(2000);</code>.</p>
 <p>O código completo ficará da seguinte maneira: </p>
 <pre><code class="language-C">/* Programa com a implementação de um contador binário de 4 bits utilizando LEDs */
 
