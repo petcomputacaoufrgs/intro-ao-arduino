@@ -2,7 +2,7 @@
 
 A sigla PWM vem do inglês Pulse Width Modulation, e é uma técnica para obter resultados analógicos utilizando sinais digitais. Ondas quadradas são geradas, mudando o nível lógico de *alto* para *baixo*, e o tempo relativo em que a onda passa em cada um desses estados acaba simulando voltagens entre 0V e 5V.
 
-Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível *baixo*, ela emitirá 0V. Caso o pulso passe o mesmo tempo nos níveis *baixo* e *alto*, a largura da onda será de 50% emitindo assim 2.75V.
+Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível *baixo*, ela emitirá 0V. Caso o pulso passe o mesmo período de tempo nos níveis *baixo* e *alto*, a largura da onda será de 50% emitindo assim 2.75V.
 
 [//]: # (Colocar gráficos representando isso)
 

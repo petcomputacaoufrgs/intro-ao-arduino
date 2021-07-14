@@ -4,7 +4,7 @@ Nesta seção, serão apresentadas algumas partes básicas do arduino que serão
 
  ![Anatomia da placa](./images/anatomia-placa.png)
 
-+ **Botão de Reset:** este botão é muito útil para testar e debugar a placa. Quando pressionado, o código presente na placa será executado desde o ínicio. Especialmente útil para quando estamos tentando descobrir a origem de algum comportamento anormal no projeto. 
++ **Botão de Reset:** este botão é muito útil para testar e debugar a placa. Quando pressionado, o código presente na placa será executado desde o ínicio. Especialmente útil para quando se está tentando descobrir a origem de algum comportamento anormal no projeto. 
 
 + **Power LED:** Estará aceso enquanto a placa estiver em funcionamento.
 
