@@ -24,3 +24,4 @@
     - [Medindo a luminosidade do ambiente](./projetos/serial/medindo-luminosidade.md)
     - [Controlando LED RGB através do computador](./projetos/serial/controlando-led.md)
 - [Medindo distâncias com o sensor ultrassônico](./projetos/medindo-distancia.md)
+- [Servo Motor](./projetos/servo-motor.md)
