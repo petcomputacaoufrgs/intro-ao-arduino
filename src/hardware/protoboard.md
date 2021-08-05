@@ -1,7 +1,5 @@
 # Protoboard
 
-[//]: # (Talvez não seja o melhor lugar para se colocar essa sessão e esse conteúdo, vamos ver ao decorrer do curso se há a necessidade de uma página separada para isso ou se é melhor mesclar o conteúdo daqui com outras páginas  -    falar de componentes como led, resistor)
-
 Também conhecida como “placa de ensaio”, “matriz de contato” ou até mesmo “breadboard”, a Protoboard,  como é comumente chamada no meio do Arduino, é uma placa com furos que possuem linhas de contatos entre eles, utilizada na montagem de protótipos. Essa placa se encaixa perfeitamente no contexto desse curso, pois testes e modificações são partes quase que intrínsecas de um projeto em Arduino, ainda mais quando se está no processo de aprendizagem. 
 
 Protoboards consistem basicamente dois grupos de faixas, são eles:
