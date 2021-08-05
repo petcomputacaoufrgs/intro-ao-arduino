@@ -12,7 +12,7 @@ Agora que você sabe o básico do funcionamento do Arduíno e de alguns componen
 ![Esquemático do projeto](./images/contador-binario.png)
 
 Utilize jumpers para conectar o terminal positivo (Anodo) de cada um dos LEDs em um pino digital da placa. A escolha dos pinos é arbitrária, mas lembre-se de inserir corretamente no momento de escrever o software. 
-Insira nos terminais negativos (Catodo) os resistores, conectando a trilha negativa da faixa de barramentos. Insira também um jumper conectando a trilha ao pino GND da placa. 
+Insira nos terminais negativos (cátodo) os resistores, conectando a trilha negativa da faixa de barramentos. Insira também um jumper conectando a trilha ao pino GND da placa. 
 
 ## Software
 

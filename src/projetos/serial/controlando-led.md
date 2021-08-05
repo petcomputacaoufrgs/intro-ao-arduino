@@ -6,11 +6,11 @@ Um LED RGB é, na verdade, a junção de 3 leds de cada uma das 3 cores primári
 
 ![Tipos de LED RGB](./../images/rgb-1.png)
 
-A diferença entre leds do tipo anodo comum e catodo comum se dá na maneira que os LEDs são conectados internamente. No caso do anodo comum ambos, os LEDs compartilham o terminal positivo, enquanto no catodo comum os LEDs compartilham o terminal negativo. 
+A diferença entre leds do tipo anodo comum e cátodo comum se dá na maneira que os LEDs são conectados internamente. No caso do anodo comum ambos, os LEDs compartilham o terminal positivo, enquanto no cátodo comum os LEDs compartilham o terminal negativo. 
 Uma das formas de descobrir qual é o tipo de LED, basta utilizar um multímetro  no modo continuidade. Coloque o terminal negativo do multímetro no maior pino do LED (pino comum) e o outro terminal em qualquer um dos 3 pinos de cor. 
-Caso o LED acenda, ele é catodo comum. Se o teste anterior não der resultados, inverta os terminais do multímetro; se o LED  acender, é anodo comum. Caso você não tenha um multímetro, não se preocupe, pois a diferença no código resultante dessa mudança é pouca, ou seja, ao rodar o projeto pela primeira vez, você verá caso tenha escrito ele na forma para catodo comum enquanto o LED é anodo comum, ou vice-versa. 
+Caso o LED acenda, ele é cátodo comum. Se o teste anterior não der resultados, inverta os terminais do multímetro; se o LED  acender, é anodo comum. Caso você não tenha um multímetro, não se preocupe, pois a diferença no código resultante dessa mudança é pouca, ou seja, ao rodar o projeto pela primeira vez, você verá caso tenha escrito ele na forma para cátodo comum enquanto o LED é anodo comum, ou vice-versa. 
 
-Agora que você sabe identificar o seu LED, deve estar se perguntando a diferença prática disso. Quando ele é do tipo catodo comum, o seu terminal comum deve ser conectado ao terminal GND, nesse caso o arduino estará controlando diretamente a voltagem aplicada a ele, ou seja, se a placa estiver enviando 5V (representado pelo valor 255 na função `analogWrite()` para a cor vermelha, a diferença de potencial será de 5V, fazendo com que o LED acenda com o máximo de brilho vermelho. Já no caso do anodo comum, o terminal comum deve ser conectado em 5V, assim ao enviar o valor 255 com a função `analogWrite` (5V) o LED simplesmente permanecerá apagado, pois a diferença de potencial será 0V.
+Agora que você sabe identificar o seu LED, deve estar se perguntando a diferença prática disso. Quando ele é do tipo cátodo comum, o seu terminal comum deve ser conectado ao terminal GND, nesse caso o arduino estará controlando diretamente a voltagem aplicada a ele, ou seja, se a placa estiver enviando 5V (representado pelo valor 255 na função `analogWrite()` para a cor vermelha, a diferença de potencial será de 5V, fazendo com que o LED acenda com o máximo de brilho vermelho. Já no caso do anodo comum, o terminal comum deve ser conectado em 5V, assim ao enviar o valor 255 com a função `analogWrite` (5V) o LED simplesmente permanecerá apagado, pois a diferença de potencial será 0V.
 
 
 ### Hardware
@@ -24,7 +24,7 @@ Agora que você sabe identificar o seu LED, deve estar se perguntando a diferen�
 
 Lembre-se que caso o LED utilizado for anodo comum, você deve conectar o terminal comum em 5V.
 
-### Código
+### Software
 Como de costume, é necessário declarar os pinos em que o LED estará conectado. Será necessário utilizar os pinos digitais com suporte a PWM (para mais detalhes, cheque o [projeto PWM - Controlando a intensidade do LED]()). Também será necessário criar uma variável do tipo `String` onde o input com a cor desejada será armazenado.
 
 ```C 
@@ -37,7 +37,7 @@ String cor;
 Uma das peças centrais do projeto será a função `defineCor()`. Uma função do tipo `void` (sem retorno) muito simples, mas que deixará o código mais limpo e legível. Como parâmetros, essa função recebe 3 inteiros, aqui chamados de `r`, `g` e `b` (onde cada uma das variáveis representa umas das 3 cores primárias do LED). Tudo que ela faz é utilizar a função `digitalWrite()` para enviar os dados específicos de cada cor para o LED. Para fazer com que o LED fique com uma certa coloração, chama-se a função passando como parâmetros o código RGB dessa cor. Por exemplo, a cor vermelha ficaria defineCor(255, 0, 0). Você pode utilizar [este site](https://www.w3schools.com/colors/colors_picker.asp) para obter o código RGB de diversas cores.
 
 ```C
-// Função para definir a cor do LED RGB do tipo CATODO COMUM
+// Função para definir a cor do LED RGB do tipo cátodo COMUM
 void defineCor(int r, int g, int b){
   digitalWrite(rLed, r);
   digitalWrite(gLed, g);
