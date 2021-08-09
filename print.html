@@ -290,7 +290,7 @@ Onde <code>pino</code> é o número do pino que deseja-se aplicar o <code>modo</
 <p><img src="hardware/./images/protoboard-1.png" alt="Protoboard" /></p>
 <p>A possibilidade de modificar posições de peças facilmente, rearranjar cabos e adicionar novos componentes faz com que o projeto seja facilmente modificado para corrigir possíveis erros ou implementar melhorias no projeto. Contudo, existem lados negativos em seu uso: pode haver “mau-contato” entre os terminais e resistência entre os contatos da placa e os componentes encaixados além de que um elevado número de “jumpers” pode causar interferência em outros componentes. Por essa razão, recomenda-se o uso de “jumpers” curtos e que não se faça muitos cruzamentos entre eles.</p>
 <h1><a class="header" href="#led" id="led">LED</a></h1>
-<p>A sigla LED vem do termo <em>light-emitting diode</em> (diodo emissor de luz) são componentes que quando percorridos por uma corrente elétrica são capazes de emitir luz. A luz emitida pode ser de diferentes cores, mas também, um LED pode emitir luz fora do espectro visível como a ultravioleta e a infravermelha (muito utilizada para comunicações entre dispositivos, como o controle remoto e uma televisão). </p>
+<p>A sigla LED vem do termo <em>light-emitting diode</em> (diodo emissor de luz). São componentes que quando percorridos por uma corrente elétrica são capazes de emitir luz. A luz emitida pode ser de diferentes cores, mas também, um LED pode emitir luz fora do espectro visível como a ultravioleta e a infravermelha (muito utilizada para comunicações entre dispositivos, como o controle remoto e uma televisão). </p>
 <p>Presentes em diversas áreas de eletrônica por terem uma longa vida útil, custo de manutenção e fabricação reduzido e pela sua versatilidade. Será muito utilizado nos projetos de arduinos deste curso</p>
 <p>Um LED comum possui dois terminais, chamados de ânodo (positivo) e cátodo (negativo). Para a identificação dos terminais, basta observar qual deles é o maior, este é o ânodo (também pode-se determinar olhando para dentro do LED, há duas placas de metal, a placa mais larga identifica o ânodo).</p>
 <p><a href="hardware/image.png"><img src="hardware/images/led.png" width="250"/></a></p>
@@ -346,7 +346,7 @@ Onde <code>pino</code> é o número do pino que deseja-se aplicar o <code>modo</
 <p><img src="projetos/./images/contador-binario.png" alt="Esquemático do projeto" /></p>
 <p>Utilize jumpers para conectar o terminal positivo (Anodo) de cada um dos LEDs em um pino digital da placa. A escolha dos pinos é arbitrária, mas lembre-se de inserir corretamente no momento de escrever o software. 
 Insira nos terminais negativos (cátodo) os resistores, conectando a trilha negativa da faixa de barramentos. Insira também um jumper conectando a trilha ao pino GND da placa. </p>
-<h2><a class="header" href="#software" id="software">Software</a></h2>
+<h3><a class="header" href="#software" id="software">Software</a></h3>
 <p>Primeiramente é necessário fazer uma declaração para ter um controle mais facilitado sobre os LEDs. Para isso, basta inserir no início do código <code>int led[] = {3, 4, 5, 6};</code>. Neste vetor você deve colocar os pinos digitais em que os leds estarão conectados na placa Arduino.
 Em seguida, dentro da função <code>setup()</code>, é necessário configurar os pinos dos leds como <code>OUTPUT</code>. A função ficará da seguinte forma:</p>
 <pre><code class="language-C">void setup()
@@ -419,6 +419,7 @@ void loop()
   }
 }
 </code></pre>
+<p><img src="projetos/./images/contador-binario.gif" alt="Projeto em funcionamento" /></p>
 <h1><a class="header" href="#pwm---controlando-intensidade-do-led" id="pwm---controlando-intensidade-do-led">PWM - Controlando intensidade do LED</a></h1>
 <p>A sigla PWM vem do inglês Pulse Width Modulation, e é uma técnica para obter resultados analógicos utilizando sinais digitais. Ondas quadradas são geradas, mudando o nível lógico de <em>alto</em> para <em>baixo</em>, e o tempo relativo em que a onda passa em cada um desses estados acaba simulando voltagens entre 0V e 5V.</p>
 <p>Na prática funciona da seguinte maneira: se a onda tiver uma largura de pulso 0, ou seja, estará sempre no nível <em>baixo</em>, ela emitirá 0V. Caso o pulso passe o mesmo período de tempo nos níveis <em>baixo</em> e <em>alto</em>, a largura da onda será de 50% emitindo assim 2.75V.</p>
@@ -482,6 +483,7 @@ void loop() {
 }
 </code></pre>
 <p>Ao compilar e enviar o código para a placa, você notará que o LED começará desligado e irá aumentar seu brilho até atingir um pico, e depois irá se apagando aos poucos. Caso queira que o pulso seja mais rápido, basta modificar o valor da taxa e/ou o tempo na função <code>delay()</code>.</p>
+<p><img src="projetos/./images/pwm-led.gif" alt="Projeto em funcionamento" /></p>
 <h1><a class="header" href="#monitor-serial" id="monitor-serial">Monitor Serial</a></h1>
 <p>O Monitor Serial é uma ferramenta muito útil na hora de interpretar dados de sensores, depurar e controlar a placa Arduino através do computador. Para acessar a tela do Monitor Serial, certifique-se de que o Arduíno esteja conectado através da porta USB, e na sua IDE clique no ícone com uma lupa, no canto superior direito ou utilize o atalho <code>CTRL + SHIFT + M</code>.</p>
 <p><img src="projetos/serial/./../images/serial-1.png" alt="Icone para abrir o monitor serial" /></p>
@@ -505,7 +507,7 @@ Infelizmente, por agora a implementação destas funcionalidades foge do escopo 
 <p>Este projeto, apesar de simples, terá como objetivo entender como funciona um sensor de luminosidade LDR e, com ele, implementar um programa que irá monitorar a luminosidade de um ambiente. Caso a luminosidade esteja abaixo de um certo valor, um LED acenderá (o LED serve como uma abstração, em uma aplicação prática você poderia conectar, no lugar do LED, um <em>módulo relé</em> e acionar uma lâmpada, por exemplo).</p>
 <p>O LDR (<em>Light Dependent Resistor</em>, ou em tradução livre, Resistor Dependente de Luz) é um sensor que, como o próprio nome indica, se trata na verdade de um resistor que varia a sua resistência de acordo com a luminosidade incidida nele. Quanto mais luz, menor será a resistência, porém os valores específicos podem variar de acordo com condições do ambiente, fabricante do sensor e até mesmo o estado do circuito onde o resistor está inserido. </p>
 <p>A plataforma <a href="projetos/serial/./../../introducao/tinkercad.html">Tinkercad</a> é perfeita para fazer testes com sensores LDR, pois nela, além de ajustar a luz incidente no sensor em tempo de execução, é possível monitorar a corrente e a resistência produzidas pelo LDR. Basta colocar na área de trabalho um <strong>Multímetro</strong> (coloque ele no modo <strong>R</strong> para medir a resistência) e um <strong>Fotossensor</strong> e conectar os terminais como na imagem abaixo. Após iniciada a simulação, é possível clicar sobre o Fotossensor e ajustar a luminosidade. É possível perceber a mudança no valor da resistência mostrado no multímetro, conforme o input de luminosidade é modificado.</p>
-<p><img src="projetos/serial/./../images/ldr.png" alt="Sensor LDR e Multimetro - Tinkercad" /></p>
+<p><img src="projetos/serial/./../images/ldr.gif" alt="Sensor LDR e Multimetro - Tinkercad" /></p>
 <p>Com o entendimento do sensor é possível partir para o projeto. Comece criando um novo sketch em sua IDE do Arduino. Primeiramente será necessário declarar em qual pino digital estará o LED e em qual pino analógico estará o sensor de luminosidade. Pela primeira vez os pinos analógicos aparecem em um projeto, eles tem uma resolução de 10 bits, ou seja, podem enviar/receber valores inteiros de 0 até 1023, tornando sua utilização com sensores perfeita, já que muitas vezes é necessário ter precisão e/ou uma larga faixa de trabalho (poderia-se usar também algum pino PWM, porém sua resolução é de apenas 8 bits (variação de 0 a 255)).</p>
 <h3><a class="header" href="#hardware-2" id="hardware-2">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários-2" id="materiais-necessários-2">Materiais necessários:</a></h4>
@@ -629,9 +631,59 @@ void defineCor(int r, int g, int b){
   }
 }
 </code></pre>
+<p>O código completo ficará da seguinte maneira:</p>
+<pre><code class="language-C">const int gLed = 9;     // Pino do LED verde
+const int bLed = 10;    // Pino do LED azul
+const int rLed = 11;    // Pino do LED vermelho
+String cor;
+
+void setup()
+{
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  Serial.begin(9600);     // Inicializador do serial
+  
+  defineCor(0,0,0);       // Inicia com o LED desligado
+}
+
+void loop()
+{
+  cor = Serial.readString();
+  
+  if(cor == &quot;vermelha&quot;){  
+    defineCor(255,0,0);
+  }
+  else if(cor == &quot;roxa&quot;){
+    defineCor(128,0,255);
+  }
+  else if(cor == &quot;branca&quot;){
+    defineCor(255,255,255);
+  }
+  else if(cor == &quot;apaga&quot;){
+    defineCor(0,0,0);
+  }
+}
+
+// Função para definir a cor do LED RGB do tipo cátodo COMUM
+void defineCor(int r, int g, int b){
+  digitalWrite(rLed, r);
+  digitalWrite(gLed, g);
+  digitalWrite(bLed, b);
+}
+
+// Função para definir a cor do LED RGB do tipo ANODO COMUM
+void defineCor(int r, int g, int b){
+  digitalWrite(rLed, 255 - r);
+  digitalWrite(gLed,255 -  g);
+  digitalWrite(bLed, 255 - b);
+}
+
+
+</code></pre>
 <p>Para acender a cor desejada, basta abrir o Monitor Serial. Nele você verá que existe uma caixa de texto, onde basta digitar o nome da cor e clicar no botão de enviar e, caso o nome tenha sido escrito corretamente (e devidamente codificado no programa), você verá o LED se acendendo na cor desejada. Caso as cores não estejam de acordo com o esperado, certifique-se de que os terminais estão bem conectados na placa ou que o seu tipo de LED (cátodo ou ânodo comum). Nas imagens abaixo, estão destacados a caixa e o botão, tanto na IDE do Arduino quanto no Tinkercad, respectivamente. </p>
 <p><img src="projetos/serial/./../images/rgb-2.png" alt="Utilização na IDE Arduino" />
-<img src="projetos/serial/./../images/rgb-3.png" alt="Utilização no Tinkercad" /></p>
+<img src="projetos/serial/./../images/rgb.gif" alt="Utilização no Tinkercad" /></p>
 <h1><a class="header" href="#medindo-distâncias-com-o-sensor-ultrassônico" id="medindo-distâncias-com-o-sensor-ultrassônico">Medindo distâncias com o sensor ultrassônico</a></h1>
 <p>O ouvido humano consegue identificar ondas de até aproximadamente 20 KHZ, frequências acima disso são chamadas de ultrassônicas e é com esse tipo de onda que o sensor opera. Quando acionado, são emitidos 8 pulsos de 40 KHz, então o sensor detecta se há algum sinal de retorno; caso seja identificado, é emitido no pino de saída um sinal de nível alto cujo tempo de duração é igual ao tempo calculado entre o envio e o retorno do sensor ultrassônico.</p>
 <p>Por meio do tempo fornecido pelo sensor, é possível calcular a distância até o objeto/obstáculo, utilizando a equação:</p>
@@ -753,7 +805,7 @@ void disparaPulsoUltrassonico(){
 </code></pre>
 <p>Para testar o projeto basta utilizar alguma fita métrica, colocando objetos a distâncias variadas do sensor e analisando se a medida física corresponde ao valor indicado no monitor serial. Note também que quando o objeto estiver a 120 centímetros ou menos, o buzzer deve começar a tocar.</p>
 <p>Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface irá se abrir. Nesta interface a área de funcionamento do sensor é destacada na cor azul, é possível posicionar um objeto nela e sua distância medindo tanto em polegadas quanto em centímetros)  aparecerá logo acima do sensor.</p>
-<p><img src="projetos/./images/sensor-ultrassonico-tinkercad.png" alt="Sensor HC-SR04" /></p>
+<p><img src="projetos/./images/sensor-ultrassonico.gif" alt="Sensor HC-SR04" /></p>
 <p>O Arduino aliado com esse sensor abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (usando como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).</p>
 <h1><a class="header" href="#servo-motor" id="servo-motor">Servo Motor</a></h1>
 <p>O servo motor é amplamente utilizado em projetos que necessitam o uso de um controle de movimento que exige posicionamento de alta precisão, reversão rápido e alto desempenho. Uma de suas características é a capacidade de manter-se em uma certa posição e manter-se nela, mesmo sofrendo com forças opostas. Sendo assim, é possível encontrá-lo em projetos de robótica, sistemas de radares, leitores de DVD, em brinquedos como carrinhos de controle remoto e na indústria, onde se torna um componente perfeito para automatização em linha de produção.</p>
