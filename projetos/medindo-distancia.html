@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="pt" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Medindo distâncias com o sensor ultrassônico</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introducao/introducao.html"><strong aria-hidden="true">1.</strong> Introdução</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/o-que-e-arduino.html"><strong aria-hidden="true">1.1.</strong> O que é o Arduino?</a></li><li class="chapter-item expanded "><a href="../introducao/por-que-arduino.html"><strong aria-hidden="true">1.2.</strong> Por que Arduino?</a></li><li class="chapter-item expanded "><a href="../introducao/tipos-de-placas.html"><strong aria-hidden="true">1.3.</strong> Tipos de placas</a></li><li class="chapter-item expanded "><a href="../introducao/anatomia-do-arduino-uno.html"><strong aria-hidden="true">1.4.</strong> Anatomia do Arduino UNO</a></li><li class="chapter-item expanded "><a href="../introducao/ide.html"><strong aria-hidden="true">1.5.</strong> IDE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introducao/instalacao-ide.html"><strong aria-hidden="true">1.5.1.</strong> Baixando e instalando a IDE</a></li><li class="chapter-item expanded "><a href="../introducao/arduino-editor.html"><strong aria-hidden="true">1.5.2.</strong> Arduino Editor - IDE online</a></li></ol></li><li class="chapter-item expanded "><a href="../introducao/tinkercad.html"><strong aria-hidden="true">1.6.</strong> Plataforma Tinkercad</a></li></ol></li><li class="chapter-item expanded "><a href="../funcoes/funcoes-basicas.html"><strong aria-hidden="true">2.</strong> Funções Básicas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../funcoes/setup-loop.html"><strong aria-hidden="true">2.1.</strong> setup() e loop()</a></li><li class="chapter-item expanded "><a href="../funcoes/entrada-saida.html"><strong aria-hidden="true">2.2.</strong> Funções de Entrada e Saída</a></li><li class="chapter-item expanded "><a href="../funcoes/tempo.html"><strong aria-hidden="true">2.3.</strong> Funções de Tempo</a></li></ol></li><li class="chapter-item expanded "><a href="../hardware/hardware-basicos.html"><strong aria-hidden="true">3.</strong> Hardware básicos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../hardware/protoboard.html"><strong aria-hidden="true">3.1.</strong> Protoboard</a></li><li class="chapter-item expanded "><a href="../hardware/led.html"><strong aria-hidden="true">3.2.</strong> LED</a></li><li class="chapter-item expanded "><a href="../hardware/resistores.html"><strong aria-hidden="true">3.3.</strong> Resistores</a></li><li class="chapter-item expanded "><a href="../hardware/botao.html"><strong aria-hidden="true">3.4.</strong> Botão tátil</a></li><li class="chapter-item expanded "><a href="../hardware/buzzer.html"><strong aria-hidden="true">3.5.</strong> Buzzer</a></li></ol></li><li class="chapter-item expanded "><a href="../projetos/contador-binario.html"><strong aria-hidden="true">4.</strong> Primeiro projeto - Contador binário</a></li><li class="chapter-item expanded "><a href="../projetos/pwm.html"><strong aria-hidden="true">5.</strong> PWM - Controlando intensidade do LED</a></li><li class="chapter-item expanded "><a href="../projetos/serial/monitor.html"><strong aria-hidden="true">6.</strong> Monitor Serial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../projetos/serial/medindo-luminosidade.html"><strong aria-hidden="true">6.1.</strong> Medindo a luminosidade do ambiente</a></li><li class="chapter-item expanded "><a href="../projetos/serial/controlando-led.html"><strong aria-hidden="true">6.2.</strong> Controlando LED RGB através do computador</a></li></ol></li><li class="chapter-item expanded "><a href="../projetos/medindo-distancia.html" class="active"><strong aria-hidden="true">7.</strong> Medindo distâncias com o sensor ultrassônico</a></li><li class="chapter-item expanded "><a href="../projetos/servo-motor.html"><strong aria-hidden="true">8.</strong> Servo Motor</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#medindo-distâncias-com-o-sensor-ultrassônico" id="medindo-distâncias-com-o-sensor-ultrassônico">Medindo distâncias com o sensor ultrassônico</a></h1>
+<p>O ouvido humano consegue identificar ondas de até aproximadamente 20 KHZ, frequências acima disso são chamadas de ultrassônicas e é com esse tipo de onda que o sensor opera. Quando acionado, são emitidos 8 pulsos de 40 KHz, então o sensor detecta se há algum sinal de retorno; caso seja identificado, é emitido no pino de saída um sinal de nível alto cujo tempo de duração é igual ao tempo calculado entre o envio e o retorno do sensor ultrassônico.</p>
+<p>Por meio do tempo fornecido pelo sensor, é possível calcular a distância até o objeto/obstáculo, utilizando a equação:</p>
+<p>Distância  = (<code>Tempo de duração do sinal de saída</code> × <code>velocidade do som</code>) / 2</p>
+<p>Onde a <code>velocidade do som</code> pode ser considerada como <strong>340 m/s</strong> (este valor é uma aproximação, pois a velocidade do som no ar depende de fatores como umidade e temperatura). Note que as unidades utilizadas no cálculo, pois para se obter um resultado consistente o <code>Tempo de duração do sinal de saída</code> deve estar em segundos, para assim se obter a distância em metros. Sem a divisão por <code>2</code>, o valor calculado corresponderia à distância que o pulso percorreu para chegar até o objeto/obstáculo somado com a distância de volta.</p>
+<p>O sensor ultrassônico HC-SR04 possui 4 pinos. Normalmente eles são identificados na placa, conforme a imagem abaixo. O posicionado na extremidade direita (<code>GND</code>) deve ser conectado ao terminal GND, enquanto o da extremidade esquerda (<code>Vcc</code>) deve ser conectado ao terminal de 5V. O pino <code>TRIG</code> serve para controlar o envio dos pulsos ultrassônicos, enquanto que o pino <code>ECHO</code> retorna para o Arduino o tempo de duração entre o envio e a recepção do sinal. O sensor opera com distâncias de aproximadamente 2cm até 4m, com o ângulo de efeito sendo 15º</p>
+<p><img src="./images/sensor-ultrassonico.png" alt="Sensor HC-SR04" /></p>
+<p>Neste projeto você montará um circuito onde um [buzzer](./../introducao/buzzer.md] irá tocar ao se aproximar a certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo, o código irá sofrer uma pequena alteração, porém será explicitado onde fazê-la.</p>
+<h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
+<h4><a class="header" href="#materiais-necessários" id="materiais-necessários">Materiais necessários:</a></h4>
+<ul>
+<li>1x Sensor ultrassônico HC-SR04</li>
+<li>1x Buzzer passivo</li>
+</ul>
+<h4><a class="header" href="#esquemático" id="esquemático">Esquemático:</a></h4>
+<p><img src="./images/medindo-distancia.png" alt="Esquemático" /></p>
+<h3><a class="header" href="#software" id="software">Software</a></h3>
+<p>Para começar, é necessário declarar e inicializar algumas variáveis e constantes. Será utilizado o valor da velocidade do som em metros por microssegundos, pois é necessário manter a consistência de unidades nos cálculos, já que o sensor retorna o tempo em microssegundos. </p>
+<pre><code class="language-C">const int pinoTrigger = 13; // Pino usado para disparar os pulsos do sensor
+const int pinoEcho = 12; // pino usado para ler a saida do sensor
+const int pinoBuzzer = 3;
+
+const float velocidadeSom = 0.000340; // Velocidade do som em metros por microssegundo
+float tempoEcho;	// Tempo de resposta do sensor
+float distancia;	// Distância do sensor ao objeto detectado
+</code></pre>
+<p>Após é necessário definir os modos e inicializar os pinos e iniciar o serial na função <code>setup()</code>. </p>
+<pre><code class="language-C">
+void setup(){
+  // Configura pino de Trigger como saída e inicializa com nível baixo
+  pinMode(pinoTrigger, OUTPUT);
+  digitalWrite(pinoTrigger, LOW);
+  // Configura pino do buzzer como saída e inicializa com nível baixo
+  pinMode(pinoBuzzer, OUTPUT);
+  digitalWrite(pinoBuzzer, LOW);
+  // configura pino ECHO como entrada
+  pinMode(pinoEcho, INPUT);	
+  // Inicializa a porta serial
+  Serial.begin(9600);
+}
+</code></pre>
+<p>Antes de escrever a função <code>loop()</code>, é preciso definir uma outra função, a qual será utilizada para ativar a emissão de ondas ultrassônicas pelo sensor. Isso é feito facilmente, controlando a ativação do pino <em>pinoTrigger</em>, basta colocá-lo em modo alto  e após alguns microssegundos voltar para o modo baixo.</p>
+<pre><code class="language-C">void disparaPulsoUltrassonico(){
+  digitalWrite(pinoTrigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinoTrigger, LOW);
+  }
+</code></pre>
+<p>Na função <code>loop()</code> para ativar o sensor, deve-se utilizar a função 'disparaPulsoUltrassonico()<code>. Logo após é necessário capturar os dados gerados pelo sensor, isso pode ser feito através da função </code>pulseIn()`.</p>
+<p>A função <code>pulseIn()</code> captura a duração de um pulso em um pino, é necessário passar dois parâmetros, são eles respectivamente:
+<em>pino</em>: pino ao qual a leitura será realizada
+<em>valor</em>: valor <code>HIGH</code> ou <code>LOW</code>, dependendo do tipo de leitura desejada.</p>
+<p>Se o valor <code>HIGH</code> é passado para a função, a função pulseIn() espera o pino ir para do estado <code>LOW</code> para <code>HIGH</code>, começa a temporizar, e quando o pino retorna ao estado <code>LOW</code> o temporizador é parado. A função retorna o tamanho do pulso em microssegundos. O tempo de retorno será armazenado na variável <code>tempoEcho</code>.</p>
+<p><code>tempoEcho = pulseIn(pinoEcho, HIGH);</code></p>
+<p>Agora com o tempo em mãos, é possível calcular a distância utilizando a fórmula dada anteriormente. Aqui também haverá uma multiplicação por <em>100</em>, para assim obter a distância em centímetros, o código ficará da seguinte maneira:</p>
+<p><code>distancia = ((tempoEcho*velocidadeSom_mporus)/2)*100;</code></p>
+<p>Agora, pode-se imprimir o resultado no Serial.</p>
+<pre><code class="language-C">  Serial.print(&quot;Distancia em centimetros: &quot;);
+  Serial.println(distancia);
+</code></pre>
+<p>Assim é possível ativar o buzzer quando o sensor lê uma certa distância. No código abaixo a frequência 784, que corresponde à nota <em>sol</em> irá tocar quando algo estiver a menos de 120 centímetros do sensor. Caso você esteja utilizando um buzzer ativo, basta substituir a função <code>tone()</code> por <code>digitalWrite(buzzer, HIGH);</code></p>
+<pre><code class="language-C">  if(distancia &lt;= 80)
+    tone(buzzer, 784, 200); 
+  else
+    digitalWrite(buzzer, LOW);
+</code></pre>
+<p>Para finalizar a função <code>loop()</code>, um pequeno <code>delay()</code> apenas para não sobrecarregar demais o serial e ser possível uma leitura mais nítida.</p>
+<pre><code class="language-C">  delay(200);  
+}
+</code></pre>
+<p>O código completo ficará da seguinte forma:</p>
+<pre><code class="language-C">const int pinTrigger = 13;              // Pino para disparar os pulsos do sensor
+const int pinEcho = 12;                 // Pino para ler a saida do sensor
+const int buzzer = 3;                   // Pino do buzzer
+
+const float velocidadeSom = 0.000340;   // Velocidade do som, metros por microssegundo
+float tempoEcho;                        // Tempo de resposta do sensor
+float distancia;                        // Distância do sensor ao objeto detectado
+
+void setup(){
+  // Configura pino de Trigger como saída e inicializa com nível baixo
+  pinMode(pinoTrigger, OUTPUT);
+  digitalWrite(pinoTrigger, LOW);
+  // Configura pino do buzzer como saída e inicializa com nível baixo
+  pinMode(buzzer, OUTPUT);
+  digitalWrite(buzzer, LOW);
+  // configura pino ECHO como entrada
+  pinMode(pinoEcho, INPUT);	
+  // Inicializa a porta serial
+  Serial.begin(9600);
+}
+
+void loop(){
+  // Envia pulso para o disparar o sensor
+  disparaPulsoUltrassonico();
+  // Mede o tempo de duração do sinal no pino de leitura(us)
+  tempoEcho = pulseIn(pinEcho, HIGH);
+  distancia = ((tempoEcho*velocidadeSom_mporus)/2)*100;
+  
+  // Impressão no serial
+  Serial.print(&quot;Distancia em centimetros: &quot;);
+  Serial.println(distancia);
+
+  // Acionamento do buzzer
+  if(distancia &lt;= 120)
+    tone(buzzer, 784, 200); 
+  else
+    digitalWrite(buzzer, LOW);
+  
+  delay(200);
+}
+
+// Funçao para enviar o pulso de trigger para o sensor ultrassônico
+void disparaPulsoUltrassonico(){
+  digitalWrite(pinTrigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinTrigger, LOW);
+  }
+</code></pre>
+<p>Para testar o projeto basta utilizar alguma fita métrica, colocando objetos a distâncias variadas do sensor e analisando se a medida física corresponde ao valor indicado no monitor serial. Note também que quando o objeto estiver a 120 centímetros ou menos, o buzzer deve começar a tocar.</p>
+<p>Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface irá se abrir. Nesta interface a área de funcionamento do sensor é destacada na cor azul, é possível posicionar um objeto nela e sua distância medindo tanto em polegadas quanto em centímetros)  aparecerá logo acima do sensor.</p>
+<p><img src="./images/sensor-ultrassonico-tinkercad.png" alt="Sensor HC-SR04" /></p>
+<p>O Arduino aliado com esse sensor abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (usando como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../projetos/serial/controlando-led.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../projetos/servo-motor.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../projetos/serial/controlando-led.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../projetos/servo-motor.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
