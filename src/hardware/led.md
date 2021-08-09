@@ -1,6 +1,6 @@
 # LED
 
-A sigla LED vem do termo *light-emitting diode* (diodo emissor de luz) são componentes que quando percorridos por uma corrente elétrica são capazes de emitir luz. A luz emitida pode ser de diferentes cores, mas também, um LED pode emitir luz fora do espectro visível como a ultravioleta e a infravermelha (muito utilizada para comunicações entre dispositivos, como o controle remoto e uma televisão). 
+A sigla LED vem do termo *light-emitting diode* (diodo emissor de luz). São componentes que quando percorridos por uma corrente elétrica são capazes de emitir luz. A luz emitida pode ser de diferentes cores, mas também, um LED pode emitir luz fora do espectro visível como a ultravioleta e a infravermelha (muito utilizada para comunicações entre dispositivos, como o controle remoto e uma televisão). 
 
 Presentes em diversas áreas de eletrônica por terem uma longa vida útil, custo de manutenção e fabricação reduzido e pela sua versatilidade. Será muito utilizado nos projetos de arduinos deste curso
 

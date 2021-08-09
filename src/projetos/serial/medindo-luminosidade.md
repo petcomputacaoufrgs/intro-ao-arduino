@@ -11,7 +11,7 @@ O LDR (*Light Dependent Resistor*, ou em tradução livre, Resistor Dependente d
 
 A plataforma [Tinkercad](./../../introducao/tinkercad.md) é perfeita para fazer testes com sensores LDR, pois nela, além de ajustar a luz incidente no sensor em tempo de execução, é possível monitorar a corrente e a resistência produzidas pelo LDR. Basta colocar na área de trabalho um __Multímetro__ (coloque ele no modo __R__ para medir a resistência) e um __Fotossensor__ e conectar os terminais como na imagem abaixo. Após iniciada a simulação, é possível clicar sobre o Fotossensor e ajustar a luminosidade. É possível perceber a mudança no valor da resistência mostrado no multímetro, conforme o input de luminosidade é modificado.
 
-![Sensor LDR e Multimetro - Tinkercad](./../images/ldr.png)
+![Sensor LDR e Multimetro - Tinkercad](./../images/ldr.gif)
 
 Com o entendimento do sensor é possível partir para o projeto. Comece criando um novo sketch em sua IDE do Arduino. Primeiramente será necessário declarar em qual pino digital estará o LED e em qual pino analógico estará o sensor de luminosidade. Pela primeira vez os pinos analógicos aparecem em um projeto, eles tem uma resolução de 10 bits, ou seja, podem enviar/receber valores inteiros de 0 até 1023, tornando sua utilização com sensores perfeita, já que muitas vezes é necessário ter precisão e/ou uma larga faixa de trabalho (poderia-se usar também algum pino PWM, porém sua resolução é de apenas 8 bits (variação de 0 a 255)).
 

@@ -153,7 +153,7 @@ Para testar o projeto basta utilizar alguma fita métrica, colocando objetos a d
 
 Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface irá se abrir. Nesta interface a área de funcionamento do sensor é destacada na cor azul, é possível posicionar um objeto nela e sua distância medindo tanto em polegadas quanto em centímetros)  aparecerá logo acima do sensor.
 
-![Sensor HC-SR04](./images/sensor-ultrassonico-tinkercad.png)
+![Sensor HC-SR04](./images/sensor-ultrassonico.gif)
 
 
 O Arduino aliado com esse sensor abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (usando como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).

@@ -14,7 +14,7 @@ Agora que você sabe o básico do funcionamento do Arduíno e de alguns componen
 Utilize jumpers para conectar o terminal positivo (Anodo) de cada um dos LEDs em um pino digital da placa. A escolha dos pinos é arbitrária, mas lembre-se de inserir corretamente no momento de escrever o software. 
 Insira nos terminais negativos (cátodo) os resistores, conectando a trilha negativa da faixa de barramentos. Insira também um jumper conectando a trilha ao pino GND da placa. 
 
-## Software
+### Software
 
 Primeiramente é necessário fazer uma declaração para ter um controle mais facilitado sobre os LEDs. Para isso, basta inserir no início do código `int led[] = {3, 4, 5, 6};`. Neste vetor você deve colocar os pinos digitais em que os leds estarão conectados na placa Arduino.
 Em seguida, dentro da função `setup()`, é necessário configurar os pinos dos leds como `OUTPUT`. A função ficará da seguinte forma:
@@ -98,3 +98,5 @@ void loop()
   }
 }
 ```
+
+![Projeto em funcionamento](./images/contador-binario.gif)

@@ -91,7 +91,60 @@ void loop()
 }
 ``` 
 
+O código completo ficará da seguinte maneira:
+```C
+const int gLed = 9;     // Pino do LED verde
+const int bLed = 10;    // Pino do LED azul
+const int rLed = 11;    // Pino do LED vermelho
+String cor;
+
+void setup()
+{
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  Serial.begin(9600);     // Inicializador do serial
+  
+  defineCor(0,0,0);       // Inicia com o LED desligado
+}
+
+void loop()
+{
+  cor = Serial.readString();
+  
+  if(cor == "vermelha"){  
+    defineCor(255,0,0);
+  }
+  else if(cor == "roxa"){
+    defineCor(128,0,255);
+  }
+  else if(cor == "branca"){
+    defineCor(255,255,255);
+  }
+  else if(cor == "apaga"){
+    defineCor(0,0,0);
+  }
+}
+
+// Função para definir a cor do LED RGB do tipo cátodo COMUM
+void defineCor(int r, int g, int b){
+  digitalWrite(rLed, r);
+  digitalWrite(gLed, g);
+  digitalWrite(bLed, b);
+}
+
+// Função para definir a cor do LED RGB do tipo ANODO COMUM
+void defineCor(int r, int g, int b){
+  digitalWrite(rLed, 255 - r);
+  digitalWrite(gLed,255 -  g);
+  digitalWrite(bLed, 255 - b);
+}
+
+
+```
+
+
 Para acender a cor desejada, basta abrir o Monitor Serial. Nele você verá que existe uma caixa de texto, onde basta digitar o nome da cor e clicar no botão de enviar e, caso o nome tenha sido escrito corretamente (e devidamente codificado no programa), você verá o LED se acendendo na cor desejada. Caso as cores não estejam de acordo com o esperado, certifique-se de que os terminais estão bem conectados na placa ou que o seu tipo de LED (cátodo ou ânodo comum). Nas imagens abaixo, estão destacados a caixa e o botão, tanto na IDE do Arduino quanto no Tinkercad, respectivamente. 
 
 ![Utilização na IDE Arduino](./../images/rgb-2.png)
-![Utilização no Tinkercad](./../images/rgb-3.png)
+![Utilização no Tinkercad](./../images/rgb.gif)
