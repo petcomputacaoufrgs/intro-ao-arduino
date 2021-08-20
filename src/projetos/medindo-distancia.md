@@ -4,16 +4,15 @@ O ouvido humano consegue identificar ondas de até aproximadamente 20 KHZ, frequ
 
 Por meio do tempo fornecido pelo sensor, é possível calcular a distância até o objeto/obstáculo, utilizando a equação:
 
-Distância  = (`Tempo de duração do sinal de saída` × `velocidade do som`) / 2
+Distância = (`Tempo de duração do sinal de saída` × `velocidade do som`) / 2
 
-Onde a `velocidade do som` pode ser considerada como __340 m/s__ (este valor é uma aproximação, pois a velocidade do som no ar depende de fatores como umidade e temperatura). Note que as unidades utilizadas no cálculo, pois para se obter um resultado consistente o `Tempo de duração do sinal de saída` deve estar em segundos, para assim se obter a distância em metros. Sem a divisão por `2`, o valor calculado corresponderia à distância que o pulso percorreu para chegar até o objeto/obstáculo somado com a distância de volta.
+Onde a `velocidade do som` pode ser considerada como __340 m/s__ (este valor é uma aproximação, pois a velocidade do som no ar depende de fatores como umidade e temperatura). Note bem as unidades utilizadas no cálculo, pois, para se obter um resultado consistente, o `Tempo de duração do sinal de saída` deve estar em segundos, para assim obter-se a distância em metros. Sem a divisão por `2`, o valor calculado corresponderia à distância que o pulso percorreu para chegar até o objeto/obstáculo somado com a distância de volta.
 
-O sensor ultrassônico HC-SR04 possui 4 pinos. Normalmente eles são identificados na placa, conforme a imagem abaixo. O posicionado na extremidade direita (`GND`) deve ser conectado ao terminal GND, enquanto o da extremidade esquerda (`Vcc`) deve ser conectado ao terminal de 5V. O pino `TRIG` serve para controlar o envio dos pulsos ultrassônicos, enquanto que o pino `ECHO` retorna para o Arduino o tempo de duração entre o envio e a recepção do sinal. O sensor opera com distâncias de aproximadamente 2cm até 4m, com o ângulo de efeito sendo 15º
+O sensor ultrassônico HC-SR04 possui 4 pinos. Normalmente eles são identificados na placa, conforme a imagem abaixo. O pino posicionado na extremidade direita (`GND`) deve ser conectado ao terminal GND, enquanto o da extremidade esquerda (`Vcc`) deve ser conectado ao terminal de 5V. O pino `TRIG` serve para controlar o envio dos pulsos ultrassônicos, enquanto que o pino `ECHO` retorna para o Arduino o tempo de duração entre o envio e a recepção do sinal. O sensor opera com distâncias de aproximadamente 2cm até 4m, com o ângulo de efeito sendo 15º.
 
 ![Sensor HC-SR04](./images/sensor-ultrassonico.png)
 
-Neste projeto você montará um circuito onde um [buzzer](./../introducao/buzzer.md] irá tocar ao se aproximar a certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo, o código irá sofrer uma pequena alteração, porém será explicitado onde fazê-la.
-
+Neste projeto, você montará um circuito onde um [buzzer](../hardware/buzzer.md] tocará ao se aproximar uma certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo; o código sofrerá uma pequena alteração, porém será explicitado onde fazê-la.
 ### Hardware
 #### Materiais necessários:
 - 1x Sensor ultrassônico HC-SR04
@@ -35,7 +34,7 @@ float tempoEcho;	// Tempo de resposta do sensor
 float distancia;	// Distância do sensor ao objeto detectado
 ```
 
-Após é necessário definir os modos e inicializar os pinos e iniciar o serial na função `setup()`. 
+Em seguida, é necessário definir os modos, inicializar os pinos e iniciar o seria na função `setup()`. 
 ```C
 
 void setup(){
@@ -52,7 +51,8 @@ void setup(){
 }
 ```
 
-Antes de escrever a função `loop()`, é preciso definir uma outra função, a qual será utilizada para ativar a emissão de ondas ultrassônicas pelo sensor. Isso é feito facilmente, controlando a ativação do pino *pinoTrigger*, basta colocá-lo em modo alto  e após alguns microssegundos voltar para o modo baixo.
+Antes de escrever a função `loop()`, é preciso definir uma outra função, que será utilizada para ativar a emissão de ondas ultrassônicas pelo sensor. Isso é feito facilmente, controlando a ativação do pino *pinoTrigger*: basta colocá-lo em modo alto e, após alguns microssegundos, voltar para o modo baixo.
+
 ```C
 void disparaPulsoUltrassonico(){
   digitalWrite(pinoTrigger, HIGH);
@@ -61,27 +61,27 @@ void disparaPulsoUltrassonico(){
   }
 ```
 
-Na função `loop()` para ativar o sensor, deve-se utilizar a função 'disparaPulsoUltrassonico()`. Logo após é necessário capturar os dados gerados pelo sensor, isso pode ser feito através da função `pulseIn()`.
+Na função `loop()` para ativar o sensor, deve-se utilizar a função `disparaPulsoUltrassonico()`. Logo em seguida, é necessário capturar os dados gerados pelo sensor. Isso pode ser feito através da função `pulseIn()`.
 
-A função `pulseIn()` captura a duração de um pulso em um pino, é necessário passar dois parâmetros, são eles respectivamente:
-*pino*: pino ao qual a leitura será realizada
+A função `pulseIn()` captura a duração de um pulso em um pino, sendo necessário passar dois parâmetros, respectivamente: 
+*pino*: pino ao qual a leitura será realizada;
 *valor*: valor `HIGH` ou `LOW`, dependendo do tipo de leitura desejada.
 
-Se o valor `HIGH` é passado para a função, a função pulseIn() espera o pino ir para do estado `LOW` para `HIGH`, começa a temporizar, e quando o pino retorna ao estado `LOW` o temporizador é parado. A função retorna o tamanho do pulso em microssegundos. O tempo de retorno será armazenado na variável `tempoEcho`.  
+Se o valor `HIGH` é passado para a função, a função pulseIn() espera o pino ir  do estado `LOW` para `HIGH`, começa a temporizar e, quando o pino retorna ao estado `LOW`, o temporizador é parado. A função retorna o tamanho do pulso em microssegundos. O tempo de retorno será armazenado na variável `tempoEcho`.  
 
 `tempoEcho = pulseIn(pinoEcho, HIGH);`
 
-Agora com o tempo em mãos, é possível calcular a distância utilizando a fórmula dada anteriormente. Aqui também haverá uma multiplicação por *100*, para assim obter a distância em centímetros, o código ficará da seguinte maneira:
+Agora com o tempo em mãos, é possível calcular a distância utilizando a fórmula dada anteriormente. Aqui também haverá uma multiplicação por *100* para, assim, obter a distância em centímetros. O código ficará da seguinte maneira:
 
 `distancia = ((tempoEcho*velocidadeSom_mporus)/2)*100;`
 
-Agora, pode-se imprimir o resultado no Serial.
+Agora, é possível imprimir o resultado no Serial.
 
 ```C
   Serial.print("Distancia em centimetros: ");
   Serial.println(distancia);
 ```
-Assim é possível ativar o buzzer quando o sensor lê uma certa distância. No código abaixo a frequência 784, que corresponde à nota *sol* irá tocar quando algo estiver a menos de 120 centímetros do sensor. Caso você esteja utilizando um buzzer ativo, basta substituir a função `tone()` por `digitalWrite(buzzer, HIGH);`
+Dessa maneira, é possível ativar o buzzer quando o sensor lê uma certa distância. No código abaixo, a frequência 784, que corresponde à nota G (sol), tocará quando algo estiver a menos de 120 centímetros do sensor. Caso você esteja utilizando um buzzer ativo, basta substituir a função `tone()` por `digitalWrite(buzzer, HIGH);`
 
 ```C
   if(distancia <= 80)
@@ -90,7 +90,7 @@ Assim é possível ativar o buzzer quando o sensor lê uma certa distância. No 
     digitalWrite(buzzer, LOW);
   ```
 
-Para finalizar a função `loop()`, um pequeno `delay()` apenas para não sobrecarregar demais o serial e ser possível uma leitura mais nítida.
+Para finalizar a função `loop()`, é preciso acrescentar um pequeno `delay()` para não sobrecarregar o serial e tornar possível uma leitura mais nítida.
 
 ```C
   delay(200);  
@@ -149,11 +149,10 @@ void disparaPulsoUltrassonico(){
   }
 ```
 
-Para testar o projeto basta utilizar alguma fita métrica, colocando objetos a distâncias variadas do sensor e analisando se a medida física corresponde ao valor indicado no monitor serial. Note também que quando o objeto estiver a 120 centímetros ou menos, o buzzer deve começar a tocar.
+Para testar o projeto, basta utilizar alguma fita métrica, colocando objetos a distâncias variadas do sensor e analisando se a medida física corresponde ao valor indicado no monitor serial. Note também que quando o objeto estiver a 120 centímetros ou menos, o buzzer deve começar a tocar.
 
-Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface irá se abrir. Nesta interface a área de funcionamento do sensor é destacada na cor azul, é possível posicionar um objeto nela e sua distância medindo tanto em polegadas quanto em centímetros)  aparecerá logo acima do sensor.
+Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface se abrirá. Nesta interface, a área de funcionamento do sensor é destacada na cor azul. É possível posicionar um objeto nela e sua distância (tanto em polegadas quanto em centímetros) aparecerá logo acima do sensor.
 
 ![Sensor HC-SR04](./images/sensor-ultrassonico.gif)
 
-
-O Arduino aliado com esse sensor abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (usando como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).
+O Arduino, aliado com esse sensor, abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).
