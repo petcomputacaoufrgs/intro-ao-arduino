@@ -149,8 +149,13 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#introdução-ao-curso" id="introdução-ao-curso">Introdução ao curso</a></h1>
-<p><img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="Alt Text" /></p>
+                        <h1><a class="header" href="#sobre-o-material" id="sobre-o-material">Sobre o material</a></h1>
+<p>Neste curso você aprenderá os conceitos básicos do Arduino, desde suas origens até suas aplicações. É esperado que o leitor tenha um conhecimento prévio em programação, já que a linguagem utilizada é uma abstração de C++. Portanto, familiaridade com alguma linguagem de programação estruturada é fortemente recomendado.</p>
+<p>No primeiro capítulo são apresentadas as características e os diferentes tipos de placas Arduino, bem como a instalação de softwares e apresentação de plataformas online para desenvolvimento e simulação.</p>
+<p>Os próximos dois capítulos são dedicados a apresentar funções básicas, tanto de estruturação quanto de controle, bem como componentes de hardware que são utilizados amplamente nos programas Arduino. Em sequência você colocará em prática o que aprendeu com diversos projetos, onde novos conceitos e hardwares (por exemplo, sensores e motores) serão apresentados ao decorrer do curso. </p>
+<p>Este material foi produzido pelo grupo <a href="https://www.inf.ufrgs.br/site/pet/">PET Computação da Universidade Federal do Rio Grande do Sul</a>, seu código fonte encontra-se hospedado no <a href="https://github.com/petcomputacaoufrgs/intro-ao-arduino">GitHub</a>. </p>
+<h1><a class="header" href="#contato" id="contato">Contato</a></h1>
+<p>Caso queira mandar um feedback sobre o curso, uma sugestão de incrementação, ou reportar algum erro, você pode entrar em contato conosco por email (pet@inf.ufrgs.br) ou pelas nossas redes sociais (@petcompufrgs).</p>
 <h1><a class="header" href="#o-que-é-arduino" id="o-que-é-arduino">O que é Arduino?</a></h1>
 <p>Arduino é uma plataforma eletrônica de código aberto baseada em hardware e softwares flexíveis e fáceis de se utilizar, tornando-se um meio perfeito para realizar prototipagens. A plataforma foi criada visando facilitar o ensino de eletrônica para estudantes e, por essas razões, possui um baixo custo e uma suave curva de aprendizagem.</p>
 <p>As placas Arduino são capazes de ler entradas - que podem ser desde um simples botão até os mais diversos sensores, como de luz, distância e temperatura - e processando essas entradas, pode-se produzir uma saída - ativar um motor, acender um LED, operar um display ou até mesmo tomar ações na internet, como publicar um Tweet.</p>
@@ -290,16 +295,16 @@ Onde <code>pino</code> é o número do pino que deseja-se aplicar o <code>modo</
 <p><img src="hardware/./images/protoboard-1.png" alt="Protoboard" /></p>
 <p>A possibilidade de modificar posições de peças facilmente, rearranjar cabos e adicionar novos componentes faz com que o projeto seja facilmente modificado para corrigir possíveis erros ou implementar melhorias no projeto. Contudo, existem lados negativos em seu uso: pode haver “mau-contato” entre os terminais e resistência entre os contatos da placa e os componentes encaixados além de que um elevado número de “jumpers” pode causar interferência em outros componentes. Por essa razão, recomenda-se o uso de “jumpers” curtos e que não se faça muitos cruzamentos entre eles.</p>
 <h1><a class="header" href="#led" id="led">LED</a></h1>
-<p>A sigla LED vem do termo <em>light-emitting diode</em> (diodo emissor de luz). São componentes que quando percorridos por uma corrente elétrica são capazes de emitir luz. A luz emitida pode ser de diferentes cores, mas também, um LED pode emitir luz fora do espectro visível como a ultravioleta e a infravermelha (muito utilizada para comunicações entre dispositivos, como o controle remoto e uma televisão). </p>
-<p>Presentes em diversas áreas de eletrônica por terem uma longa vida útil, custo de manutenção e fabricação reduzido e pela sua versatilidade. Será muito utilizado nos projetos de arduinos deste curso</p>
-<p>Um LED comum possui dois terminais, chamados de ânodo (positivo) e cátodo (negativo). Para a identificação dos terminais, basta observar qual deles é o maior, este é o ânodo (também pode-se determinar olhando para dentro do LED, há duas placas de metal, a placa mais larga identifica o ânodo).</p>
+<p>A sigla LED vem do termo light-emitting diode (diodo emissor de luz). São componentes que, quando percorridos por uma corrente elétrica, são capazes de emitir luz. A luz emitida pode ser de diferentes cores, mas um LED também pode emitir luz fora do espectro visível, como a ultravioleta e a infravermelha (muito utilizada para comunicações entre dispositivos, como o controle remoto e uma televisão).</p>
+<p>LEDs estão presentes em diversas áreas de eletrônica por terem uma longa vida útil, custo de manutenção e fabricação reduzido e pela sua versatilidade. Serão muito utilizados nos projetos de arduino deste curso</p>
+<p>Um LED comum possui dois terminais, chamados de ânodo (positivo) e cátodo (negativo). Para a identificação dos terminais, basta observar qual deles é o maior, sendo este o ânodo. Também é possível identificá-los olhando para dentro do LED, onde há duas placas de metal: a placa mais larga identifica o ânodo.</p>
 <p><a href="hardware/image.png"><img src="hardware/images/led.png" width="250"/></a></p>
-<p>Para o funcionamento de um LED, é necessário alimentá-lo com energia corrente. A faixa de operação geralmente é de 6 a 20 mA e uma tensão de 1 a 3,3V. Tais valores variam de acordo com o tamanho e o modelo, por isso é recompensado verificar as especificações fornecidas pelo fabricante. Normalmente os LEDs são acompanhados por resistores para ajustar a tensão e corrente para não haver a “queima” do mesmo</p>
+<p>Para o funcionamento de um LED, é necessário alimentá-lo com energia corrente. A faixa de operação geralmente é de 6 a 20 mA, com uma tensão de 1 a 3,3V. Tais valores variam de acordo com o tamanho e o modelo, por isso é recomendado verificar as especificações fornecidas pelo fabricante. Normalmente, os LEDs são acompanhados por resistores para ajustar a tensão e a corrente, para prevenir que haja a “queima” do mesmo</p>
 <h1><a class="header" href="#resistores" id="resistores">Resistores</a></h1>
-<p>Um resistor eletrônico é um dispositivo elétrico capaz de limitar a corrente elétrica em um circuito e transformando energia elétrica em energia térmica (através do efeito joule).  A resistência causa a queda de tensão em um circuito elétrico, porém jamais causa queda de corrente elétrica, apesar de limitá-la. Isso significa que a corrente elétrica que entra em um terminal do resistor será exatamente a mesma que sai pelo outro terminal, porém há uma queda de tensão, ou seja, uma diferença de potencial entre os terminais do resistor. Utilizando-se disso, é possível usar os resistores para controlar a corrente elétrica sobre os componentes desejados.</p>
-<p>Como visto anteriormente, um LED possui limitação de corrente e tensão, uma forma de controlar esses valores para evitar que o componente estrague, é necessário utilizar um resistor, para que os limites impostos pelo fabricante não sejam ultrapassados</p>
-<p>Qualquer objeto físico pode ser considerado um resistor: plástico, borracha, o corpo humano e até mesmo o vácuo possuem resistência mensuráveis. Essa resistência se dá pela divisão da diferença de potencial pela corrente elétrica, e é medido em ohms (Ω). Metais são materiais que possuem uma baixa resistência, por isso normalmente são utilizados em fios (como o cobre ou até mesmo ouro).</p>
-<p>Os resistores utilizados em circuitos elétricos são pequenos componentes cilíndricos, geralmente possuem 4 faixas coloridas (existem os de 5 faixas, também chamados de resistores de precisão). Tais faixas são utilizadas para determinar o valor da resistência. As duas (ou três, no caso de resistores de precisão) primeiras faixas indicam quais os primeiros dígitos do valor da resistência. A próxima faixa corresponde ao fator de multiplicação. Por fim, a última faixa corresponde a percentagem da tolerância do resistor, esta faixa se encontra mais distanciada das outras.</p>
+<p>Um resistor eletrônico é um dispositivo elétrico capaz de limitar a corrente elétrica em um circuito e transformar energia elétrica em energia térmica (através do efeito joule). A resistência causa a queda de tensão em um circuito elétrico, porém jamais causa queda de corrente elétrica, apesar de limitá-la. Isso significa que a corrente elétrica que entra em um terminal do resistor será exatamente a mesma que sai pelo outro terminal, porém há uma queda de tensão, ou seja, uma diferença de potencial entre os terminais do resistor. Utilizando-se disso, é possível usar os resistores para controlar a corrente elétrica sobre os componentes desejados.</p>
+<p>Como visto anteriormente, um LED possui limitação de corrente e tensão. Uma forma de controlar esses valores para evitar que o componente estrague é utilizar um resistor, para que os limites impostos pelo fabricante não sejam ultrapassados.</p>
+<p>Qualquer objeto físico pode ser considerado um resistor: plástico, borracha, o corpo humano e até mesmo o vácuo possuem resistência mensuráveis. Essa resistência se dá pela divisão da diferença de potencial pela corrente elétrica, e é medido em ohms (Ω). Metais são materiais que possuem uma baixa resistência, por isso normalmente são utilizados em fios (como o cobre ou até mesmo ouro).
+Os resistores utilizados em circuitos elétricos são pequenos componentes cilíndricos, geralmente possuem 4 faixas coloridas (existem os de 5 faixas, também chamados de resistores de precisão). Tais faixas são utilizadas para determinar o valor da resistência. As duas (ou três, no caso de resistores de precisão) primeiras faixas indicam quais os primeiros dígitos do valor da resistência. A próxima faixa corresponde ao fator de multiplicação. Por fim, a última faixa corresponde à porcentagem da tolerância do resistor e se encontra mais distanciada das outras.</p>
 <p>Abaixo é possível encontrar uma tabela com as cores e seus valores correspondentes em cada faixa</p>
 <table><thead><tr><th align="center">Cor</th><th align="center">1ª faixa</th><th align="center">2ª faixa</th><th align="center">3ª faixa (mult)</th><th align="center">4ª faixa (tol)</th></tr></thead><tbody>
 <tr><td align="center">Preta</td><td align="center">-</td><td align="center">0</td><td align="center">x 1 Ω</td><td align="center">-</td></tr>
@@ -315,7 +320,7 @@ Onde <code>pino</code> é o número do pino que deseja-se aplicar o <code>modo</
 <tr><td align="center">Prata</td><td align="center">-</td><td align="center">-</td><td align="center">x 0,01</td><td align="center">10%</td></tr>
 <tr><td align="center">Dourada</td><td align="center">-</td><td align="center">-</td><td align="center">x 0,1</td><td align="center">5%</td></tr>
 </tbody></table>
-<p>Tome como exemplo o resistor de quatro faixas abaixo. Suas duas primeiras faixas são amarela e cinza, respectivamente, é possível tirar o número 48. Analisando a terceira faixa, de cor vermelha basta multiplicar o valor anteriormente obtido (48) por 100, obtendo assim 4800 Ω, com uma tolerância de 5% (última faixa dourada). Perceba que a última faixa está mais distanciada das demais, para poder diferenciá-la da primeira faixa.</p>
+<p>Tome como exemplo o resistor de quatro faixas abaixo. Suas duas primeiras faixas são amarela e cinza, respectivamente, de onde podemos tirar o número 48. Analisando a terceira faixa, de cor vermelha basta multiplicar o valor anteriormente obtido (48) por 100, obtendo assim 4800 Ω, com uma tolerância de 5% (última faixa dourada). Perceba que a última faixa está mais distanciada das demais, para poder diferenciá-la da primeira faixa.</p>
 <p><img src="hardware/./images/resistor.png" alt="Resistor de 4800Ω," /></p>
 <h1><a class="header" href="#botão-tátil" id="botão-tátil">Botão tátil</a></h1>
 <p>Ter uma forma que permita ao usuário inserir alguma informação para modificar o estado do código é algo essencial na computação. Um exemplo disso é o teclado, que nada mais é do que um conjunto de botões. </p>
@@ -329,10 +334,10 @@ Onde <code>pino</code> é o número do pino que deseja-se aplicar o <code>modo</
 <p>Este circuito funciona da seguinte maneira: quando o botão não está pressionado, o terminal GND está em contato direto com o pino digital, sendo assim, estará sempre no modo LOW. Ao ser pressionado, o botão cria o contato entre o 5V e o pino digital. A corrente, então, tem dois possíveis caminhos para seguir: pode ir tanto para o pino GND (causando um curto circuito) ou para o pino digital. A corrente elétrica sempre segue o caminho com menos resistência, então como não há resistência até o pino digital (tecnicamente existe a resistência do fio, mas é desprezível) e por haver um resistor com resistência relativamente alta no caminho para o pino GND, a corrente irá para o pino digital, acionando o LED da placa Arduino.</p>
 <p>Para realizar a construção do botão no modo PULL-UP, basta conectar o resistor no terminal de 5V (ou de 3V se for o caso) e o terminal GND diretamente ao botão. Dessa forma, o pino digital estará em modo HIGH sempre que o botão não estiver sendo pressionado.</p>
 <h1><a class="header" href="#buzzer" id="buzzer">Buzzer</a></h1>
-<p>O buzzer, também conhecido como <em>piezo</em> é um componente que utiliza o efeito piezoelétrico, transformando energia elétrica em energia mecânica, e o som nada mais é do que propagação de ondas mecânicas em uma faixa de frequência entre aproximadamente 20Hz e 20KHz . </p>
-<p>Existem dois tipos de buzzer, o ativo e o passivo. O primeiro normalmente possui sua traseira lacrada e possui pinos de diferentes tamanhos, enquanto que no buzzer passivo a placa PCB está à mostra em sua traseira e ambos os pinos tem o mesmo tamanho. Ambos os tipos de buzzer, em sua frente, possuem um sinal de “<strong>+</strong>” indicando qual pino é o terminal positivo.</p>
-<p>O buzzer ativo é o mais simples dentre eles, pois basta energizar ele já começa a apitar continuamente. Ele não depende de um circuito externo. Por esse motivo ele não é o mais indicado para criar melodias, mas sim para sinalizações - como alarmes. Sua utilização com o arduino acaba se tornando simples, visto que para ativá-lo basta utilizar a função <code>digitalWrite()</code>.</p>
-<p>Já com o buzzer passivo, apenas energiza-lo não é o suficiente - ao fazer isso ele apenas emitirá um estalo e ruídos. Para o bom funcionamento dele é necessário utilizar algum circuito para emitir sinais, como se fosse um auto-falante - e isso trás mais precisão na frequência emitida, fazendo com que diversos sons e melodias possam ser gerados. Para se utilizar o buzzer passivo com o arduino, é necessário utilizar a função <code>tone(pino, frequência, duração)</code>, onde o parâmetro <em>pino</em> é a porta na qual o buzzer está conectado, <em>frequência</em> é a frequência do som gerado e o parâmetro <em>duração</em> é o tempo em que o buzzer permanecerá emitindo o som.</p>
+<p>O buzzer, também conhecido como piezo, é um componente que utiliza o efeito piezoelétrico, transformando energia elétrica em energia mecânica, e o som produzido nada mais é do que propagação de ondas mecânicas em uma faixa de frequência entre aproximadamente 20Hz e 20KHz .</p>
+<p>Existem dois tipos de buzzer, o ativo e o passivo. O primeiro normalmente possui sua traseira lacrada e possui pinos de diferentes tamanhos, enquanto que no buzzer passivo a placa PCB está à mostra em sua traseira e ambos os pinos têm o mesmo tamanho. Ambos os tipos de buzzer, na parte da frente, possuem um sinal de “+” indicando qual pino é o terminal positivo.</p>
+<p>O buzzer ativo é o mais simples dentre eles, pois basta energizá-lo que ele já começa a apitar continuamente. Ele não depende de um circuito externo. Por esse motivo,não é o mais indicado para criar melodias, mas sim para sinalizações - como alarmes. Sua utilização com o arduino acaba tornando-se simples, visto que para ativá-lo basta utilizar a função digitalWrite().</p>
+<p>Já com o buzzer passivo, apenas energiza-lo não é o suficiente - ao fazer isso ele apenas emitirá um estalo e ruídos. Para o seu bom funcionamento, é necessário utilizar algum circuito para emitir sinais, como se fosse um alto-falante - isso traz mais precisão na frequência emitida, fazendo com que diversos sons e melodias possam ser gerados. Para se utilizar o buzzer passivo com o arduino, é necessário utilizar a função tone(pino, frequência, duração), onde o parâmetro pino é a porta na qual o buzzer está conectado, frequência é a frequência do som gerado e o parâmetro duração é o tempo em que o buzzer permanecerá emitindo o som.</p>
 <h1><a class="header" href="#primeiro-projeto---contador-binário" id="primeiro-projeto---contador-binário">Primeiro projeto - Contador binário</a></h1>
 <p>Agora que você sabe o básico do funcionamento do Arduíno e de alguns componentes eletrônicos, utilizar esse conhecimento para criar um pequeno projeto, pois a prática é essencial para a fixação do aprendizado. Nesa seção você aprenderá a fazer um contador binário de 4 bits, ou seja, onde será possível contar de 0 a 15 utilizando LEDs. </p>
 <h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
@@ -687,11 +692,11 @@ void defineCor(int r, int g, int b){
 <h1><a class="header" href="#medindo-distâncias-com-o-sensor-ultrassônico" id="medindo-distâncias-com-o-sensor-ultrassônico">Medindo distâncias com o sensor ultrassônico</a></h1>
 <p>O ouvido humano consegue identificar ondas de até aproximadamente 20 KHZ, frequências acima disso são chamadas de ultrassônicas e é com esse tipo de onda que o sensor opera. Quando acionado, são emitidos 8 pulsos de 40 KHz, então o sensor detecta se há algum sinal de retorno; caso seja identificado, é emitido no pino de saída um sinal de nível alto cujo tempo de duração é igual ao tempo calculado entre o envio e o retorno do sensor ultrassônico.</p>
 <p>Por meio do tempo fornecido pelo sensor, é possível calcular a distância até o objeto/obstáculo, utilizando a equação:</p>
-<p>Distância  = (<code>Tempo de duração do sinal de saída</code> × <code>velocidade do som</code>) / 2</p>
-<p>Onde a <code>velocidade do som</code> pode ser considerada como <strong>340 m/s</strong> (este valor é uma aproximação, pois a velocidade do som no ar depende de fatores como umidade e temperatura). Note que as unidades utilizadas no cálculo, pois para se obter um resultado consistente o <code>Tempo de duração do sinal de saída</code> deve estar em segundos, para assim se obter a distância em metros. Sem a divisão por <code>2</code>, o valor calculado corresponderia à distância que o pulso percorreu para chegar até o objeto/obstáculo somado com a distância de volta.</p>
-<p>O sensor ultrassônico HC-SR04 possui 4 pinos. Normalmente eles são identificados na placa, conforme a imagem abaixo. O posicionado na extremidade direita (<code>GND</code>) deve ser conectado ao terminal GND, enquanto o da extremidade esquerda (<code>Vcc</code>) deve ser conectado ao terminal de 5V. O pino <code>TRIG</code> serve para controlar o envio dos pulsos ultrassônicos, enquanto que o pino <code>ECHO</code> retorna para o Arduino o tempo de duração entre o envio e a recepção do sinal. O sensor opera com distâncias de aproximadamente 2cm até 4m, com o ângulo de efeito sendo 15º</p>
+<p>Distância = (<code>Tempo de duração do sinal de saída</code> × <code>velocidade do som</code>) / 2</p>
+<p>Onde a <code>velocidade do som</code> pode ser considerada como <strong>340 m/s</strong> (este valor é uma aproximação, pois a velocidade do som no ar depende de fatores como umidade e temperatura). Note bem as unidades utilizadas no cálculo, pois, para se obter um resultado consistente, o <code>Tempo de duração do sinal de saída</code> deve estar em segundos, para assim obter-se a distância em metros. Sem a divisão por <code>2</code>, o valor calculado corresponderia à distância que o pulso percorreu para chegar até o objeto/obstáculo somado com a distância de volta.</p>
+<p>O sensor ultrassônico HC-SR04 possui 4 pinos. Normalmente eles são identificados na placa, conforme a imagem abaixo. O pino posicionado na extremidade direita (<code>GND</code>) deve ser conectado ao terminal GND, enquanto o da extremidade esquerda (<code>Vcc</code>) deve ser conectado ao terminal de 5V. O pino <code>TRIG</code> serve para controlar o envio dos pulsos ultrassônicos, enquanto que o pino <code>ECHO</code> retorna para o Arduino o tempo de duração entre o envio e a recepção do sinal. O sensor opera com distâncias de aproximadamente 2cm até 4m, com o ângulo de efeito sendo 15º.</p>
 <p><img src="projetos/./images/sensor-ultrassonico.png" alt="Sensor HC-SR04" /></p>
-<p>Neste projeto você montará um circuito onde um [buzzer](./../introducao/buzzer.md] irá tocar ao se aproximar a certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo, o código irá sofrer uma pequena alteração, porém será explicitado onde fazê-la.</p>
+<p>Neste projeto, você montará um circuito onde um [buzzer](../hardware/buzzer.md] tocará ao se aproximar uma certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo; o código sofrerá uma pequena alteração, porém será explicitado onde fazê-la.</p>
 <h3><a class="header" href="#hardware-4" id="hardware-4">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários-4" id="materiais-necessários-4">Materiais necessários:</a></h4>
 <ul>
@@ -710,7 +715,7 @@ const float velocidadeSom = 0.000340; // Velocidade do som em metros por micross
 float tempoEcho;	// Tempo de resposta do sensor
 float distancia;	// Distância do sensor ao objeto detectado
 </code></pre>
-<p>Após é necessário definir os modos e inicializar os pinos e iniciar o serial na função <code>setup()</code>. </p>
+<p>Em seguida, é necessário definir os modos, inicializar os pinos e iniciar o seria na função <code>setup()</code>. </p>
 <pre><code class="language-C">
 void setup(){
   // Configura pino de Trigger como saída e inicializa com nível baixo
@@ -725,32 +730,32 @@ void setup(){
   Serial.begin(9600);
 }
 </code></pre>
-<p>Antes de escrever a função <code>loop()</code>, é preciso definir uma outra função, a qual será utilizada para ativar a emissão de ondas ultrassônicas pelo sensor. Isso é feito facilmente, controlando a ativação do pino <em>pinoTrigger</em>, basta colocá-lo em modo alto  e após alguns microssegundos voltar para o modo baixo.</p>
+<p>Antes de escrever a função <code>loop()</code>, é preciso definir uma outra função, que será utilizada para ativar a emissão de ondas ultrassônicas pelo sensor. Isso é feito facilmente, controlando a ativação do pino <em>pinoTrigger</em>: basta colocá-lo em modo alto e, após alguns microssegundos, voltar para o modo baixo.</p>
 <pre><code class="language-C">void disparaPulsoUltrassonico(){
   digitalWrite(pinoTrigger, HIGH);
   delayMicroseconds(10);
   digitalWrite(pinoTrigger, LOW);
   }
 </code></pre>
-<p>Na função <code>loop()</code> para ativar o sensor, deve-se utilizar a função 'disparaPulsoUltrassonico()<code>. Logo após é necessário capturar os dados gerados pelo sensor, isso pode ser feito através da função </code>pulseIn()`.</p>
-<p>A função <code>pulseIn()</code> captura a duração de um pulso em um pino, é necessário passar dois parâmetros, são eles respectivamente:
-<em>pino</em>: pino ao qual a leitura será realizada
+<p>Na função <code>loop()</code> para ativar o sensor, deve-se utilizar a função <code>disparaPulsoUltrassonico()</code>. Logo em seguida, é necessário capturar os dados gerados pelo sensor. Isso pode ser feito através da função <code>pulseIn()</code>.</p>
+<p>A função <code>pulseIn()</code> captura a duração de um pulso em um pino, sendo necessário passar dois parâmetros, respectivamente: 
+<em>pino</em>: pino ao qual a leitura será realizada;
 <em>valor</em>: valor <code>HIGH</code> ou <code>LOW</code>, dependendo do tipo de leitura desejada.</p>
-<p>Se o valor <code>HIGH</code> é passado para a função, a função pulseIn() espera o pino ir para do estado <code>LOW</code> para <code>HIGH</code>, começa a temporizar, e quando o pino retorna ao estado <code>LOW</code> o temporizador é parado. A função retorna o tamanho do pulso em microssegundos. O tempo de retorno será armazenado na variável <code>tempoEcho</code>.</p>
+<p>Se o valor <code>HIGH</code> é passado para a função, a função pulseIn() espera o pino ir  do estado <code>LOW</code> para <code>HIGH</code>, começa a temporizar e, quando o pino retorna ao estado <code>LOW</code>, o temporizador é parado. A função retorna o tamanho do pulso em microssegundos. O tempo de retorno será armazenado na variável <code>tempoEcho</code>.</p>
 <p><code>tempoEcho = pulseIn(pinoEcho, HIGH);</code></p>
-<p>Agora com o tempo em mãos, é possível calcular a distância utilizando a fórmula dada anteriormente. Aqui também haverá uma multiplicação por <em>100</em>, para assim obter a distância em centímetros, o código ficará da seguinte maneira:</p>
+<p>Agora com o tempo em mãos, é possível calcular a distância utilizando a fórmula dada anteriormente. Aqui também haverá uma multiplicação por <em>100</em> para, assim, obter a distância em centímetros. O código ficará da seguinte maneira:</p>
 <p><code>distancia = ((tempoEcho*velocidadeSom_mporus)/2)*100;</code></p>
-<p>Agora, pode-se imprimir o resultado no Serial.</p>
+<p>Agora, é possível imprimir o resultado no Serial.</p>
 <pre><code class="language-C">  Serial.print(&quot;Distancia em centimetros: &quot;);
   Serial.println(distancia);
 </code></pre>
-<p>Assim é possível ativar o buzzer quando o sensor lê uma certa distância. No código abaixo a frequência 784, que corresponde à nota <em>sol</em> irá tocar quando algo estiver a menos de 120 centímetros do sensor. Caso você esteja utilizando um buzzer ativo, basta substituir a função <code>tone()</code> por <code>digitalWrite(buzzer, HIGH);</code></p>
+<p>Dessa maneira, é possível ativar o buzzer quando o sensor lê uma certa distância. No código abaixo, a frequência 784, que corresponde à nota G (sol), tocará quando algo estiver a menos de 120 centímetros do sensor. Caso você esteja utilizando um buzzer ativo, basta substituir a função <code>tone()</code> por <code>digitalWrite(buzzer, HIGH);</code></p>
 <pre><code class="language-C">  if(distancia &lt;= 80)
     tone(buzzer, 784, 200); 
   else
     digitalWrite(buzzer, LOW);
 </code></pre>
-<p>Para finalizar a função <code>loop()</code>, um pequeno <code>delay()</code> apenas para não sobrecarregar demais o serial e ser possível uma leitura mais nítida.</p>
+<p>Para finalizar a função <code>loop()</code>, é preciso acrescentar um pequeno <code>delay()</code> para não sobrecarregar o serial e tornar possível uma leitura mais nítida.</p>
 <pre><code class="language-C">  delay(200);  
 }
 </code></pre>
@@ -803,41 +808,45 @@ void disparaPulsoUltrassonico(){
   digitalWrite(pinTrigger, LOW);
   }
 </code></pre>
-<p>Para testar o projeto basta utilizar alguma fita métrica, colocando objetos a distâncias variadas do sensor e analisando se a medida física corresponde ao valor indicado no monitor serial. Note também que quando o objeto estiver a 120 centímetros ou menos, o buzzer deve começar a tocar.</p>
-<p>Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface irá se abrir. Nesta interface a área de funcionamento do sensor é destacada na cor azul, é possível posicionar um objeto nela e sua distância medindo tanto em polegadas quanto em centímetros)  aparecerá logo acima do sensor.</p>
+<p>Para testar o projeto, basta utilizar alguma fita métrica, colocando objetos a distâncias variadas do sensor e analisando se a medida física corresponde ao valor indicado no monitor serial. Note também que quando o objeto estiver a 120 centímetros ou menos, o buzzer deve começar a tocar.</p>
+<p>Na plataforma Tinkercad, enquanto o projeto está sendo simulado, basta clicar no sensor ultrassônico e uma pequena interface se abrirá. Nesta interface, a área de funcionamento do sensor é destacada na cor azul. É possível posicionar um objeto nela e sua distância (tanto em polegadas quanto em centímetros) aparecerá logo acima do sensor.</p>
 <p><img src="projetos/./images/sensor-ultrassonico.gif" alt="Sensor HC-SR04" /></p>
-<p>O Arduino aliado com esse sensor abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (usando como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).</p>
+<p>O Arduino, aliado com esse sensor, abre um leque de possibilidades para projetos interessantes, como sonares, robôs autônomos que detectam e mapeiam paredes de um ambiente, velocímetros e até mesmo automação para casa (como um detector de presença para ativar lâmpadas ou eletrodomésticos, por exemplo).</p>
 <h1><a class="header" href="#servo-motor" id="servo-motor">Servo Motor</a></h1>
-<p>O servo motor é amplamente utilizado em projetos que necessitam o uso de um controle de movimento que exige posicionamento de alta precisão, reversão rápido e alto desempenho. Uma de suas características é a capacidade de manter-se em uma certa posição e manter-se nela, mesmo sofrendo com forças opostas. Sendo assim, é possível encontrá-lo em projetos de robótica, sistemas de radares, leitores de DVD, em brinquedos como carrinhos de controle remoto e na indústria, onde se torna um componente perfeito para automatização em linha de produção.</p>
-<p>O Micro Servo motor SG90 é um dos servos mais populares para aplicações com Arduino. É possível comandar que o servo movimente seu eixo até determinado ângulo, podendo ir de menos -90º à 90º, ou seja, possui um grau de liberdade de 180º.</p>
-<p>O servo motor possui três fios, sendo eles:
-Marrom: GND
-Vermelho: VCC (com uma tensão de operação de 3v até 7,5V
-Laranja: Controle PWM (fio que fará comunicação com o Arduino)</p>
+<p>O servo motor é amplamente utilizado em projetos que necessitam do uso de um controle de movimento que exige posicionamento de alta precisão, reversão rápida e alto desempenho. Uma de suas características é a capacidade de se colocar em uma certa posição e manter-se nela, mesmo sofrendo com forças opostas. Sendo assim, é possível encontrá-lo em projetos de robótica, sistemas de radares, leitores de DVD, em brinquedos como carrinhos de controle remoto e na indústria, onde se torna um componente perfeito para automatização em linha de produção.</p>
+<p>O Micro Servo motor SG90 é um dos servos mais populares para aplicações com Arduino. É possível comandar que o servo movimente seu eixo até determinado ângulo, podendo ir de -90º à 90º, ou seja, possui um grau de liberdade de 180º.</p>
+<p>O servo motor possui três fios, sendo eles: </p>
+<ul>
+<li>Marrom: GND</li>
+<li>Vermelho: VCC (com uma tensão de operação de 3v até 7,5V</li>
+<li>Laranja: Controle PWM (fio que fará comunicação com o Arduino)</li>
+</ul>
 <p><img src="projetos/./images/servo-motor.png" alt="Terminais do servo motor" /></p>
 <p>Note que os servos motores tendem a drenar uma quantidade considerável de energia, então, caso você precise utilizar mais de um ou dois motores simultaneamente, é recomendável utilizar uma fonte de energia externa para alimentá-los. </p>
-<p>O Arduino possui uma biblioteca que facilita o controle de um servo motor, é a <code>Servo.h</code>. Ao utilizar a biblioteca, a função <code>analogWrite()</code> é desativada nos pinos digitais 9 e 10, ou seja, não é possível utilizar o PWM com esses pinos, pois eles serão reservados para o uso com os servos.</p>
+<p>O Arduino possui uma biblioteca que facilita o controle de um servo motor, a <code>Servo.h</code>. Ao utilizar a biblioteca, a função <code>analogWrite()</code> é desativada nos pinos digitais 9 e 10, ou seja, não é possível utilizar o PWM com esses pinos, pois eles serão reservados para o uso com os servos.</p>
 <p>Alguns dos métodos mais utilizados são: </p>
 <table><thead><tr><th>Função</th><th>Descrição</th></tr></thead><tbody>
-<tr><td><code>attach()</code></td><td>Equivale à função <code>pinMode()</code> só que para os servos motores. Nela você passa como parâmetro o pino ao qual o terminal Sinal do servo está conectado ao Arduino</td></tr>
-<tr><td><code>write()</code></td><td>Recebe como parâmetro um valor entre 0 e 180, que será definido como o ângulo do eixo do motor</td></tr>
+<tr><td><code>attach()</code></td><td>Equivale à função <code>pinMode()</code>, só que para os servos motores. Nela você passa como parâmetro o pino onde o terminal Sinal do servo está conectado ao Arduino.</td></tr>
+<tr><td><code>write()</code></td><td>Recebe como parâmetro um valor entre 0 e 180, que será definido como o ângulo do eixo do motor.</td></tr>
 <tr><td><code>read()</code></td><td>Retorna o atual valor do ângulo do eixo do motor (o último valor passado através de uma função <code>write()</code>)</td></tr>
-<tr><td>read()</td><td>Retorna o primeiro byte de dados recebido disponível, ou -1 caso não haja nada disponível</td></tr>
-<tr><td>readBytes()</td><td>Lê caracteres da porta serial e os move para um buffer</td></tr>
-<tr><td>write()</td><td>Envia dados em formato binário para a porta serial</td></tr>
+<tr><td>read()</td><td>Retorna o primeiro byte de dados recebido disponível, ou -1 caso não haja nada disponível.</td></tr>
+<tr><td>readBytes()</td><td>Lê caracteres da porta serial e move-os para um buffer.</td></tr>
+<tr><td>write()</td><td>Envia dados em formato binário para a porta serial.</td></tr>
 </tbody></table>
-<p>Neste projeto, você irá conseguir controlar a haste do motor através de um potenciômetro.</p>
+<p>Neste projeto, você conseguirá controlar a haste do motor através de um potenciômetro.</p>
 <h3><a class="header" href="#hardware-5" id="hardware-5">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários-5" id="materiais-necessários-5">Materiais necessários</a></h4>
-<p>1x potenciômetro de 10KΩ (A resistência não afetará o resultado deste projeto) 
-1x servo motor (preferencialmente o modelo SG90)</p>
+<ul>
+<li>1x potenciômetro de 10KΩ (a resistência não afetará o resultado deste projeto) </li>
+<li>1x servo motor (preferencialmente o modelo SG90)</li>
+</ul>
 <h4><a class="header" href="#esquemáticos" id="esquemáticos">Esquemáticos</a></h4>
 <p><img src="projetos/./images/servo-motor-2.png" alt="Esquemático" /></p>
-<p>A montagem do circuito é bem simples, basta conectar a energia tanto no motor quanto no potenciômetro. Após, deve-se conectar o sinal do motor na pino digital 9 do arduino e o pino central do potenciômetro no pino analógico A0.</p>
+<p>A montagem do circuito é bem simples, basta conectar a energia tanto no motor quanto no potenciômetro. Logo após, deve-se conectar o sinal do motor ao pino digital 9 do arduino e o pino central do potenciômetro ao pino analógico A0.</p>
 <h4><a class="header" href="#software-5" id="software-5">Software</a></h4>
-<p>Neste projeto o começo é um pouco diferente, será necessário incluir a biblioteca do próprio arduino que contém os métodos do servo motor, para facilitar o uso do mesmo. Para isto, basta iniciar o código com a seguinte linha:</p>
+<p>O começo deste projeto é um pouco diferente: será necessário incluir a biblioteca do próprio arduino que contém os métodos do servo motor, para facilitar o uso do mesmo. Para isto, basta iniciar o código com a seguinte linha:</p>
 <p><code>#include “Servo.h”</code></p>
-<p>Com isso, pode-se então declarar e iniciar algumas variáveis. Aqui também será declarado um objeto do tipo <code>Servo</code>, o qual foi fornecido pela biblioteca <em>Servo.h</em></p>
+<p>Com isso, pode-se então declarar e inicializar algumas variáveis. Aqui também será declarado um objeto do tipo <code>Servo</code>, que foi fornecido pela biblioteca <em>Servo.h</em></p>
 <pre><code class="language-C">Servo servo;         // Inicializa o servo 
 int angulo = 0;      // Ajusta o ângulo inicial do Servo
 int pot = A0;         // Inicializa o pino analógico para o potenciômetro
@@ -848,7 +857,7 @@ int pot = A0;         // Inicializa o pino analógico para o potenciômetro
   pinMode(pot, INPUT) ; // Define o pino do potenciometro como entrada
 } 
 </code></pre>
-<p>Na função <code>loop()</code> é tudo muito simples, será utilizado a função <code>analogRead()</code> para ler na porta analógica. O valor retornado será um inteiro entre 0 e 1023, porém o ângulo que devemos passar para rotacionar o servo motor deve ser entre 0 e 180, para isso é utilizada a função <code>map()</code>, convertendo a faixa de valores dados pela entrada do potenciômetro para a faixa de valores que será enviada para o motor. </p>
+<p>Na função <code>loop()</code> é tudo muito simples. Será utilizada a função <code>analogRead()</code> para ler na porta analógica. O valor retornado será um inteiro entre 0 e 1023, porém o ângulo que devemos passar para rotacionar o servo motor deve estar entre 0 e 180. Para esse fim é utilizada a função <code>map()</code>, convertendo a faixa de valores dados pela entrada do potenciômetro para a faixa de valores que será enviada para o motor.</p>
 <pre><code class="language-C">void loop() {
     angulo = analogRead(pot); 
     angulo = map(angulo, 0, 1023, 0, 180); 
@@ -858,7 +867,7 @@ int pot = A0;         // Inicializa o pino analógico para o potenciômetro
     delay(5);
 } 
 </code></pre>
-<p>E é simples assim! Agora basta rodar o código e ao girar o potenciômetro a haste do motor irá girar também, veja no gif abaixo:</p>
+<p>E é simples assim! Agora, basta rodar o código e notar que, ao girar o potenciômetro, a haste do motor irá girar também. Veja no gif abaixo:</p>
 <p><img src="projetos/./images/servo-funcionamento-1.gif" alt="Projeto em funcionamento" /></p>
 
                     </main>

@@ -148,36 +148,40 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#servo-motor" id="servo-motor">Servo Motor</a></h1>
-<p>O servo motor é amplamente utilizado em projetos que necessitam o uso de um controle de movimento que exige posicionamento de alta precisão, reversão rápido e alto desempenho. Uma de suas características é a capacidade de manter-se em uma certa posição e manter-se nela, mesmo sofrendo com forças opostas. Sendo assim, é possível encontrá-lo em projetos de robótica, sistemas de radares, leitores de DVD, em brinquedos como carrinhos de controle remoto e na indústria, onde se torna um componente perfeito para automatização em linha de produção.</p>
-<p>O Micro Servo motor SG90 é um dos servos mais populares para aplicações com Arduino. É possível comandar que o servo movimente seu eixo até determinado ângulo, podendo ir de menos -90º à 90º, ou seja, possui um grau de liberdade de 180º.</p>
-<p>O servo motor possui três fios, sendo eles:
-Marrom: GND
-Vermelho: VCC (com uma tensão de operação de 3v até 7,5V
-Laranja: Controle PWM (fio que fará comunicação com o Arduino)</p>
+<p>O servo motor é amplamente utilizado em projetos que necessitam do uso de um controle de movimento que exige posicionamento de alta precisão, reversão rápida e alto desempenho. Uma de suas características é a capacidade de se colocar em uma certa posição e manter-se nela, mesmo sofrendo com forças opostas. Sendo assim, é possível encontrá-lo em projetos de robótica, sistemas de radares, leitores de DVD, em brinquedos como carrinhos de controle remoto e na indústria, onde se torna um componente perfeito para automatização em linha de produção.</p>
+<p>O Micro Servo motor SG90 é um dos servos mais populares para aplicações com Arduino. É possível comandar que o servo movimente seu eixo até determinado ângulo, podendo ir de -90º à 90º, ou seja, possui um grau de liberdade de 180º.</p>
+<p>O servo motor possui três fios, sendo eles: </p>
+<ul>
+<li>Marrom: GND</li>
+<li>Vermelho: VCC (com uma tensão de operação de 3v até 7,5V</li>
+<li>Laranja: Controle PWM (fio que fará comunicação com o Arduino)</li>
+</ul>
 <p><img src="./images/servo-motor.png" alt="Terminais do servo motor" /></p>
 <p>Note que os servos motores tendem a drenar uma quantidade considerável de energia, então, caso você precise utilizar mais de um ou dois motores simultaneamente, é recomendável utilizar uma fonte de energia externa para alimentá-los. </p>
-<p>O Arduino possui uma biblioteca que facilita o controle de um servo motor, é a <code>Servo.h</code>. Ao utilizar a biblioteca, a função <code>analogWrite()</code> é desativada nos pinos digitais 9 e 10, ou seja, não é possível utilizar o PWM com esses pinos, pois eles serão reservados para o uso com os servos.</p>
+<p>O Arduino possui uma biblioteca que facilita o controle de um servo motor, a <code>Servo.h</code>. Ao utilizar a biblioteca, a função <code>analogWrite()</code> é desativada nos pinos digitais 9 e 10, ou seja, não é possível utilizar o PWM com esses pinos, pois eles serão reservados para o uso com os servos.</p>
 <p>Alguns dos métodos mais utilizados são: </p>
 <table><thead><tr><th>Função</th><th>Descrição</th></tr></thead><tbody>
-<tr><td><code>attach()</code></td><td>Equivale à função <code>pinMode()</code> só que para os servos motores. Nela você passa como parâmetro o pino ao qual o terminal Sinal do servo está conectado ao Arduino</td></tr>
-<tr><td><code>write()</code></td><td>Recebe como parâmetro um valor entre 0 e 180, que será definido como o ângulo do eixo do motor</td></tr>
+<tr><td><code>attach()</code></td><td>Equivale à função <code>pinMode()</code>, só que para os servos motores. Nela você passa como parâmetro o pino onde o terminal Sinal do servo está conectado ao Arduino.</td></tr>
+<tr><td><code>write()</code></td><td>Recebe como parâmetro um valor entre 0 e 180, que será definido como o ângulo do eixo do motor.</td></tr>
 <tr><td><code>read()</code></td><td>Retorna o atual valor do ângulo do eixo do motor (o último valor passado através de uma função <code>write()</code>)</td></tr>
-<tr><td>read()</td><td>Retorna o primeiro byte de dados recebido disponível, ou -1 caso não haja nada disponível</td></tr>
-<tr><td>readBytes()</td><td>Lê caracteres da porta serial e os move para um buffer</td></tr>
-<tr><td>write()</td><td>Envia dados em formato binário para a porta serial</td></tr>
+<tr><td>read()</td><td>Retorna o primeiro byte de dados recebido disponível, ou -1 caso não haja nada disponível.</td></tr>
+<tr><td>readBytes()</td><td>Lê caracteres da porta serial e move-os para um buffer.</td></tr>
+<tr><td>write()</td><td>Envia dados em formato binário para a porta serial.</td></tr>
 </tbody></table>
-<p>Neste projeto, você irá conseguir controlar a haste do motor através de um potenciômetro.</p>
+<p>Neste projeto, você conseguirá controlar a haste do motor através de um potenciômetro.</p>
 <h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
 <h4><a class="header" href="#materiais-necessários" id="materiais-necessários">Materiais necessários</a></h4>
-<p>1x potenciômetro de 10KΩ (A resistência não afetará o resultado deste projeto) 
-1x servo motor (preferencialmente o modelo SG90)</p>
+<ul>
+<li>1x potenciômetro de 10KΩ (a resistência não afetará o resultado deste projeto) </li>
+<li>1x servo motor (preferencialmente o modelo SG90)</li>
+</ul>
 <h4><a class="header" href="#esquemáticos" id="esquemáticos">Esquemáticos</a></h4>
 <p><img src="./images/servo-motor-2.png" alt="Esquemático" /></p>
-<p>A montagem do circuito é bem simples, basta conectar a energia tanto no motor quanto no potenciômetro. Após, deve-se conectar o sinal do motor na pino digital 9 do arduino e o pino central do potenciômetro no pino analógico A0.</p>
+<p>A montagem do circuito é bem simples, basta conectar a energia tanto no motor quanto no potenciômetro. Logo após, deve-se conectar o sinal do motor ao pino digital 9 do arduino e o pino central do potenciômetro ao pino analógico A0.</p>
 <h4><a class="header" href="#software" id="software">Software</a></h4>
-<p>Neste projeto o começo é um pouco diferente, será necessário incluir a biblioteca do próprio arduino que contém os métodos do servo motor, para facilitar o uso do mesmo. Para isto, basta iniciar o código com a seguinte linha:</p>
+<p>O começo deste projeto é um pouco diferente: será necessário incluir a biblioteca do próprio arduino que contém os métodos do servo motor, para facilitar o uso do mesmo. Para isto, basta iniciar o código com a seguinte linha:</p>
 <p><code>#include “Servo.h”</code></p>
-<p>Com isso, pode-se então declarar e iniciar algumas variáveis. Aqui também será declarado um objeto do tipo <code>Servo</code>, o qual foi fornecido pela biblioteca <em>Servo.h</em></p>
+<p>Com isso, pode-se então declarar e inicializar algumas variáveis. Aqui também será declarado um objeto do tipo <code>Servo</code>, que foi fornecido pela biblioteca <em>Servo.h</em></p>
 <pre><code class="language-C">Servo servo;         // Inicializa o servo 
 int angulo = 0;      // Ajusta o ângulo inicial do Servo
 int pot = A0;         // Inicializa o pino analógico para o potenciômetro
@@ -188,7 +192,7 @@ int pot = A0;         // Inicializa o pino analógico para o potenciômetro
   pinMode(pot, INPUT) ; // Define o pino do potenciometro como entrada
 } 
 </code></pre>
-<p>Na função <code>loop()</code> é tudo muito simples, será utilizado a função <code>analogRead()</code> para ler na porta analógica. O valor retornado será um inteiro entre 0 e 1023, porém o ângulo que devemos passar para rotacionar o servo motor deve ser entre 0 e 180, para isso é utilizada a função <code>map()</code>, convertendo a faixa de valores dados pela entrada do potenciômetro para a faixa de valores que será enviada para o motor. </p>
+<p>Na função <code>loop()</code> é tudo muito simples. Será utilizada a função <code>analogRead()</code> para ler na porta analógica. O valor retornado será um inteiro entre 0 e 1023, porém o ângulo que devemos passar para rotacionar o servo motor deve estar entre 0 e 180. Para esse fim é utilizada a função <code>map()</code>, convertendo a faixa de valores dados pela entrada do potenciômetro para a faixa de valores que será enviada para o motor.</p>
 <pre><code class="language-C">void loop() {
     angulo = analogRead(pot); 
     angulo = map(angulo, 0, 1023, 0, 180); 
@@ -198,7 +202,7 @@ int pot = A0;         // Inicializa o pino analógico para o potenciômetro
     delay(5);
 } 
 </code></pre>
-<p>E é simples assim! Agora basta rodar o código e ao girar o potenciômetro a haste do motor irá girar também, veja no gif abaixo:</p>
+<p>E é simples assim! Agora, basta rodar o código e notar que, ao girar o potenciômetro, a haste do motor irá girar também. Veja no gif abaixo:</p>
 <p><img src="./images/servo-funcionamento-1.gif" alt="Projeto em funcionamento" /></p>
 
                     </main>
