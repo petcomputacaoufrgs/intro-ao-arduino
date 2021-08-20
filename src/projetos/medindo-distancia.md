@@ -12,7 +12,7 @@ O sensor ultrassônico HC-SR04 possui 4 pinos. Normalmente eles são identificad
 
 ![Sensor HC-SR04](./images/sensor-ultrassonico.png)
 
-Neste projeto, você montará um circuito onde um [buzzer](../hardware/buzzer.md] tocará ao se aproximar uma certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo; o código sofrerá uma pequena alteração, porém será explicitado onde fazê-la.
+Neste projeto, você montará um circuito onde um [buzzer](./../hardware/buzzer.md) tocará ao se aproximar uma certa distância do sensor. Será utilizado um buzzer do tipo passivo, pois é o que o simulador do Tinkercad oferece, porém sinta-se à vontade para utilizar um buzzer ativo; o código sofrerá uma pequena alteração, porém será explicitado onde fazê-la.
 ### Hardware
 #### Materiais necessários:
 - 1x Sensor ultrassônico HC-SR04
