@@ -4,7 +4,7 @@ A sigla LED vem do termo light-emitting diode (diodo emissor de luz). São compo
 
 LEDs estão presentes em diversas áreas de eletrônica por terem uma longa vida útil, custo de manutenção e fabricação reduzido e pela sua versatilidade. Serão muito utilizados nos projetos de arduino deste curso
 
-Um LED comum possui dois terminais, chamados de ânodo (positivo) e cátodo (negativo). Para a identificação dos terminais, basta observar qual deles é o maior, sendo este o ânodo. Também é possível identificá-los olhando para dentro do LED, onde há duas placas de metal: a placa mais larga identifica o ânodo.
+Um LED comum possui dois terminais, chamados de ânodo (positivo) e cátodo (negativo). Para a identificação dos terminais, basta observar qual deles é o maior, sendo este o ânodo. Também é possível identificá-los olhando a borda externa na base do LED: o lado que possui um chanfro é o cátodo.
 
 [<img src="images/led.png" width="250"/>](image.png)
 
