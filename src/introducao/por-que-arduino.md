@@ -2,7 +2,7 @@
 
 A plataforma Arduino apresenta várias vantagens, algumas delas são:
 
-+ **Preço -** Placas Arduino são relativamente baratas, se comparadas a outras plataformas de microcontroladores. (Inserir um preço médio de kits encontrados na internet?)
++ **Preço -** Placas Arduino são relativamente baratas, se comparadas a outras plataformas de microcontroladores.
 
 + **Multi-plataforma  -** Não importa se estiver em uma plataforma GNU/Linux, Windows ou MacOS, você terá acesso a IDE do Arduino. Ela está disponível até mesmo para navegador! Isso é uma vantagem sobre a maioria dos outros microcontroladores, em que suas plataformas de desenvolvimento são disponibilizadas apenas para Windows.
 
